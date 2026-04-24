@@ -183,12 +183,12 @@ export default function ServiceStackExperience() {
         ScrollTrigger.refresh();
         setTimeout(() => {
           if (isActive) ScrollTrigger.refresh();
-        }, 500);
+        }, 1000);
 
       }, containerRef);
     };
 
-    const timeoutId = setTimeout(init, 200);
+    const timeoutId = setTimeout(init, 500);
 
     return () => {
       isActive = false;
