@@ -169,7 +169,7 @@ export default function Footer({ marquee }: { marquee?: React.ReactNode }) {
             <Link href="/terms">Terms & Conditions</Link>
           </div>
           <div className="copyright" suppressHydrationWarning>
-            Managed by <Link href="/" style={{ color: '#ff6b35', textDecoration: 'none' }} suppressHydrationWarning>brandbanalo</Link>
+            Managed by <Link href="/" style={{ color: '#ff6b35', textDecoration: 'none' }} suppressHydrationWarning>BrandBanalo</Link>
           </div>
         </div>
       </div>
