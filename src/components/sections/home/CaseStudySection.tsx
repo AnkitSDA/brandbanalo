@@ -57,14 +57,64 @@ export default function CaseStudySection() {
   return (
     <section className="caseStudy-feature-section section-padding" style={{ backgroundColor: '#fcfcfc', position: 'relative', overflow: 'hidden' }}>
       {/* Background shape placeholders */}
-      <div style={{ position: 'absolute', top: '10%', left: '-10%', width: '40%', height: '80%', backgroundColor: '#f0f4f2', borderTopRightRadius: '50%', borderBottomRightRadius: '50%', zIndex: 0 }}></div>
+      <div className="d-none d-lg-block" style={{ position: 'absolute', top: '10%', left: '-10%', width: '40%', height: '80%', backgroundColor: '#f0f4f2', borderTopRightRadius: '50%', borderBottomRightRadius: '50%', zIndex: 0 }}></div>
+      
+      <style jsx>{`
+        .caseStudy-feature-section {
+          padding: clamp(60px, 10vw, 120px) 0;
+        }
+        .accordion-item {
+          transition: all 0.3s ease;
+          margin-bottom: 1rem !important;
+        }
+        .accordion-item:hover {
+          border-color: #36509a !important;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .table-responsive {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .table {
+          min-width: 500px;
+        }
+        @media (max-width: 991px) {
+          .showcase-wrapper {
+            padding-right: 0 !important;
+          }
+          .image-container {
+            padding-right: 0 !important;
+            margin-bottom: 2rem !important;
+          }
+          .floating-logo-box {
+            display: none !important;
+          }
+        }
+        @media (max-width: 575px) {
+          .action-buttons-wrap {
+            flex-direction: column;
+            align-items: stretch !important;
+          }
+          .action-buttons-wrap button, 
+          .action-buttons-wrap .nav-controls {
+            width: 100%;
+          }
+          .nav-controls button {
+            flex: 1;
+          }
+          .result-badge {
+            font-size: 12px !important;
+            padding: 6px 16px !important;
+          }
+        }
+      `}</style>
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="row align-items-center" style={transitionStyle}>
           {/* Left Column - Showcase Images */}
           <div className="col-lg-6 mb-5 mb-lg-0">
             <div className="showcase-wrapper pe-lg-5">
-              <div className="image-container position-relative mb-5" style={{ paddingRight: '15%' }}>
+              <div className="image-container position-relative mb-5">
                  {/* Main Mockup Image */}
                  <div className="main-image shadow-sm rounded bg-white p-2" style={{ border: '1px solid #f0f0f0' }}>
                     <img 

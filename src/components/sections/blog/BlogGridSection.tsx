@@ -3,57 +3,21 @@ import Link from "next/link";
 const posts = [
   {
     img: "01.webp",
-    category: "BRANDING",
-    date: "05 September 2025",
-    title: "How digital agencies drive business success and growth",
+    category: "MARKETING",
+    date: "15 October 2025",
+    title: "Digital Marketing agency for E-commerce Startup",
   },
   {
     img: "02.webp",
-    category: "DEVELOPMENT",
-    date: "05 September 2025",
-    title: "Choosing the right digital agency for business growth",
+    category: "STRATEGY",
+    date: "20 October 2025",
+    title: "Brand Banalo best Digital marketing agency for Lead Generation",
   },
   {
     img: "03.webp",
-    category: "MARKETING",
-    date: "05 September 2025",
-    title: "How digital agencies drive business success and growth",
-  },
-  {
-    img: "12.webp",
-    category: "BRANDING",
-    date: "05 September 2025",
-    title: "Graphic design agency your Graphic design agency Brand needs.",
-  },
-  {
-    img: "13.webp",
-    category: "DEVELOPMENT",
-    date: "05 September 2025",
-    title: "Importers achieve savings through the First Sale rule!",
-  },
-  {
-    img: "14.webp",
-    category: "MARKETING",
-    date: "05 September 2025",
-    title: "Focus logistics secure new landmark Contracts",
-  },
-  {
-    img: "15.webp",
-    category: "BRANDING",
-    date: "05 September 2025",
-    title: "Importers achieve savings through the First Sale rule!",
-  },
-  {
-    img: "16.webp",
-    category: "DEVELOPMENT",
-    date: "05 September 2025",
-    title: "Is now the right time to invest in an enterprise",
-  },
-  {
-    img: "17.webp",
-    category: "MARKETING",
-    date: "05 September 2025",
-    title: "Focus logistics secure new landmark Contracts",
+    category: "BUSINESS",
+    date: "25 October 2025",
+    title: "Best Business Making Company to Grow your Company",
   },
 ];
 
@@ -75,14 +39,14 @@ export default function BlogGridSection() {
                 <div className="content">
                   <ul className="cat-list">
                     <li>
-                      <Link href="/blog/details">{post.category}</Link>
+                      <Link href={`/blog/details?slug=${post.title.toLowerCase().replace(/ /g, '-')}`}>{post.category}</Link>
                     </li>
                     <li>
                       <span>{post.date}</span>
                     </li>
                   </ul>
                   <h4>
-                    <Link href="/blog/details">{post.title}</Link>
+                    <Link href={`/blog/details?slug=${post.title.toLowerCase().replace(/ /g, '-')}`}>{post.title}</Link>
                   </h4>
                 </div>
               </div>

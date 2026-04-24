@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import BlogDetailsContentSection from "./BlogDetailsContentSection";
 import BlogSidebar from "./BlogSidebar";
 
@@ -7,7 +8,9 @@ export default function BlogDetailsMainSection() {
       <div className="container">
         <div className="row g-4">
           <div className="col-12 col-lg-8">
-            <BlogDetailsContentSection />
+            <Suspense fallback={<div>Loading...</div>}>
+              <BlogDetailsContentSection />
+            </Suspense>
           </div>
           <div className="col-12 col-lg-4">
             <BlogSidebar />

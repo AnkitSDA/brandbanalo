@@ -54,11 +54,11 @@ export default function CaseStudyDetailsMainSection({
   };
 
   const defaultServiceImage: Record<string, string> = {
-    "web-development": "Web Site.webp",
-    "search-engine-optimization": "SEO.webp",
-    "lead-generation": "Lead Generation.webp",
-    "social-media": "Social media.webp",
-    "branding": "Brand Design.webp",
+    "web-development": "Web Site.png",
+    "search-engine-optimization": "SEO.png",
+    "lead-generation": "Lead Generation.png",
+    "social-media": "Social media.png",
+    "branding": "Brand Design.png",
   };
 
   const serviceMainImage = defaultServiceImage[displayCaseStudy.service];
@@ -69,19 +69,25 @@ export default function CaseStudyDetailsMainSection({
     : `/assets/img/case-study/${displayCaseStudy.img}`;
 
   return (
-    <section className="case-study-details-section section-padding">
+    <section className="case-study-details-section section-padding" style={{ background: '#fcfcfe' }}>
       <div className="container">
         <div className="case-study-details-wrapper">
-          <div className="details-image">
+          <div className="details-image mb-5" style={{ 
+            borderRadius: '30px', 
+            overflow: 'hidden', 
+            boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
+            border: '1px solid rgba(0,0,0,0.03)'
+          }}>
             <img
               src={mainImageSrc}
               alt={displayCaseStudy.title}
               onError={handleCaseStudyImageError}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
 
           <div className="case-study-details-items">
-            <div className="row g-4">
+            <div className="row g-5">
               <div className="col-xl-8">
                 <CaseStudyDetailsContentSection caseStudy={displayCaseStudy} />
               </div>
@@ -94,6 +100,9 @@ export default function CaseStudyDetailsMainSection({
           {/* Image Slider Section - After Content */}
           {displayCaseStudy.images && displayCaseStudy.images.length > 0 && (
             <div className="gallery-slider-section mt-5 pt-5">
+              <div className="section-title mb-4">
+                <h3 style={{ fontSize: '28px', fontWeight: '800', color: '#1a1a1a' }}>Project Gallery</h3>
+              </div>
               <CaseStudyImageSlider 
                 images={displayCaseStudy.images}
                 caseStudyTitle={displayCaseStudy.title}
@@ -101,45 +110,72 @@ export default function CaseStudyDetailsMainSection({
             </div>
           )}
 
-          <div className="slider-button d-flex align-items-center justify-content-between">
-            <div className="d-flex align-items-center gap-xxl-4 gap-3 gap-2">
+          {/* Navigation Section */}
+          <div className="slider-button d-flex align-items-center justify-content-between mt-5 p-4" style={{ 
+            background: '#ffffff', 
+            borderRadius: '20px', 
+            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+            border: '1px solid #f0f0f0'
+          }}>
+            <div className="prev-nav" style={{ flex: 1 }}>
               {prevCaseStudy ? (
-                <>
-                  <Link
-                    href={prevCaseStudy.href}
-                    className="cmn-prev cmn-border d-center"
-                    aria-label="Previous caseStudy"
-                  >
+                <Link href={prevCaseStudy.href} className="d-flex align-items-center gap-3 text-decoration-none group">
+                  <div className="nav-icon d-center" style={{ 
+                    width: '50px', 
+                    height: '50px', 
+                    borderRadius: '12px', 
+                    background: '#f8f7ff', 
+                    color: '#3b286d',
+                    transition: 'all 0.3s ease'
+                  }}>
                     <i className="fas fa-chevron-left" />
-                  </Link>
-                  <span className="fw-bold white-clr previus-text text-capitalize">
-                    {prevCaseStudy.title}
-                  </span>
-                </>
+                  </div>
+                  <div className="nav-text d-none d-sm-block">
+                    <span style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', display: 'block' }}>Previous Project</span>
+                    <span className="fw-bold" style={{ color: '#1a1a1a', fontSize: '15px' }}>{prevCaseStudy.title}</span>
+                  </div>
+                </Link>
               ) : (
-                <span className="fw-bold white-clr previus-text text-capitalize text-muted">
-                  first case study
-                </span>
+                <div className="d-flex align-items-center gap-3 opacity-50">
+                  <div className="nav-icon d-center" style={{ width: '50px', height: '50px', borderRadius: '12px', background: '#f5f5f5', color: '#999' }}>
+                    <i className="fas fa-chevron-left" />
+                  </div>
+                  <span style={{ fontSize: '14px', color: '#999' }}>First Project</span>
+                </div>
               )}
             </div>
-            <div className="d-flex align-items-center gap-xxl-4 gap-3 gap-2">
+
+            <div className="all-work d-none d-md-block">
+               <Link href="/case-study" className="d-center" style={{ width: '40px', height: '40px', color: '#3b286d' }}>
+                 <i className="fas fa-th-large" style={{ fontSize: '20px' }} />
+               </Link>
+            </div>
+
+            <div className="next-nav" style={{ flex: 1, textAlign: 'right' }}>
               {nextCaseStudy ? (
-                <>
-                  <span className="fw-bold white-clr previus-text text-capitalize">
-                    {nextCaseStudy.title}
-                  </span>
-                  <Link
-                    href={nextCaseStudy.href}
-                    className="cmn-next cmn-border d-center"
-                    aria-label="Next caseStudy"
-                  >
+                <Link href={nextCaseStudy.href} className="d-flex align-items-center justify-content-end gap-3 text-decoration-none">
+                  <div className="nav-text d-none d-sm-block">
+                    <span style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', display: 'block' }}>Next Project</span>
+                    <span className="fw-bold" style={{ color: '#1a1a1a', fontSize: '15px' }}>{nextCaseStudy.title}</span>
+                  </div>
+                  <div className="nav-icon d-center" style={{ 
+                    width: '50px', 
+                    height: '50px', 
+                    borderRadius: '12px', 
+                    background: '#f8f7ff', 
+                    color: '#3b286d',
+                    transition: 'all 0.3s ease'
+                  }}>
                     <i className="fas fa-chevron-right" />
-                  </Link>
-                </>
+                  </div>
+                </Link>
               ) : (
-                <span className="fw-bold white-clr previus-text text-capitalize text-muted">
-                  last case study
-                </span>
+                <div className="d-flex align-items-center justify-content-end gap-3 opacity-50">
+                  <span style={{ fontSize: '14px', color: '#999' }}>Last Project</span>
+                  <div className="nav-icon d-center" style={{ width: '50px', height: '50px', borderRadius: '12px', background: '#f5f5f5', color: '#999' }}>
+                    <i className="fas fa-chevron-right" />
+                  </div>
+                </div>
               )}
             </div>
           </div>

@@ -117,18 +117,15 @@ export default function ServiceDetailsMainSection({ initialServiceId, initialInd
                   style={{
                     borderRadius: 20,
                     border: "1px solid rgba(0,0,0,0.08)",
-                    background:
-                      "linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02))",
                     minHeight: 330,
-                    display: "flex",
-                    alignItems: "flex-end",
-                    padding: 24,
+                    overflow: "hidden",
                   }}
                 >
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: 18 }}>{industry.name}</div>
-                    <div style={{ opacity: 0.85 }}>{industry.description}</div>
-                  </div>
+                  <img 
+                    src={industry.image} 
+                    alt={industry.name} 
+                    style={{ width: "100%", height: "100%", minHeight: 330, objectFit: "cover" }} 
+                  />
                 </div>
               </div>
             </div>

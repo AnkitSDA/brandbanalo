@@ -1,4 +1,46 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+
+const blogContent = {
+  "digital-marketing-agency-for-e-commerce-startup": {
+    title: "Digital Marketing agency for E-commerce Startup",
+    category: "MARKETING",
+    date: "15 October 2025",
+    img: "/assets/img/news/post-4.webp",
+    content: [
+      "In the competitive world of e-commerce, standing out requires more than just a great product. Startups need a robust digital marketing strategy that encompasses SEO, performance marketing, and social media engagement. At Brand Banalo, we specialize in helping e-commerce ventures scale from zero to hero by implementing conversion-focused tactics.",
+      "Scaling an online store involves understanding customer behavior and optimizing every touchpoint. From high-converting landing pages to targeted Meta and Google ads, our approach ensures that every marketing dollar spent contributes to your bottom line. We focus on building long-term brand value while driving immediate sales.",
+      "Effective e-commerce marketing isn't just about traffic; it's about the right traffic. By leveraging advanced data analytics and audience segmentation, we help startups reach potential customers who are most likely to convert, ensuring sustainable growth in the digital marketplace."
+    ],
+    quote: "E-commerce success is built on the foundation of data-driven marketing and relentless optimization."
+  },
+  "brand-banalo-best-digital-marketing-agency-for-lead-generation": {
+    title: "Brand Banalo best Digital marketing agency for Lead Generation",
+    category: "STRATEGY",
+    date: "20 October 2025",
+    img: "/assets/img/news/post-5.webp",
+    content: [
+      "Lead generation is the lifeblood of B2B and service-based businesses. Brand Banalo has earned its reputation as a leader in this field by consistently delivering high-quality, qualified leads. Our methodology combines strategic content marketing with advanced lead capture systems to ensure your sales team always has a full pipeline.",
+      "We believe that a lead is only as good as its potential to convert. That's why our strategies focus on lead scoring and qualification. We use multi-channel approaches—including LinkedIn automation, email sequences, and high-intent search ads—to find decision-makers who are ready to buy.",
+      "Our lead generation funnels are designed to educate and nurture prospects. By providing value at every stage of the buyer's journey, we build the trust necessary for high-ticket conversions. With Brand Banalo, you're not just getting clicks; you're getting future partners."
+    ],
+    quote: "True lead generation isn't about filling a database; it's about starting meaningful business conversations."
+  },
+  "best-business-making-company-to-grow-your-company": {
+    title: "Best Business Making Company to Grow your Company",
+    category: "BUSINESS",
+    date: "25 October 2025",
+    img: "/assets/img/news/post-6.webp",
+    content: [
+      "Growth is a holistic process that goes beyond simple marketing. As a premier business-making company, Brand Banalo looks at your entire ecosystem—from brand positioning to operational scalability. We help businesses redefine their market presence and reach new heights through strategic innovation.",
+      "Sustainable growth requires a clear roadmap. We work closely with founders to identify untapped market opportunities and develop unique value propositions that resonate with modern consumers. Our team brings together branding experts, business analysts, and digital pioneers to ensure your growth is both rapid and stable.",
+      "Whether you are looking to pivot, scale, or dominate your niche, we provide the tools and expertise needed to succeed. Our focus is on creating value that lasts, helping you build a legacy that stands the test of time in an ever-evolving business landscape."
+    ],
+    quote: "Business growth is a marathon, not a sprint. The right strategy turns potential into performance."
+  }
+};
 
 function QuoteIcon() {
   return (
@@ -22,54 +64,40 @@ function QuoteIcon() {
 }
 
 export default function BlogDetailsContentSection() {
+  const searchParams = useSearchParams();
+  const slug = searchParams.get("slug") || "digital-marketing-agency-for-e-commerce-startup";
+  
+  const post = blogContent[slug as keyof typeof blogContent] || blogContent["digital-marketing-agency-for-e-commerce-startup"];
+
   return (
     <div className="news-details-wrapper">
       <div className="news-post-details">
         <div className="single-news-post">
           <div className="post-featured-thumb">
-            <img src="/assets/img/news/post-4.webp" alt="Blog post" />
+            <img src={post.img} alt={post.title} />
           </div>
           <div className="post-content">
             <ul className="cat-list">
-              <li>DEVELOPMENT</li>
+              <li>{post.category}</li>
               <li>
-                <span>05 September 2025</span>
+                <span>{post.date}</span>
               </li>
             </ul>
-            <h3>How digital agencies drive business success and growth</h3>
-            <p className="mb-3">
-              In recent years, the healthcare industry has witnessed a
-              groundbreaking transformation driven by the integration of
-              artificial intelligence (AI) technologies. These advancements are
-              revolutionizing patient care, medical research, diagnostics. These
-              advancements are revolutionizing.
-            </p>
-            <p className="mb-3">
-              One of the most remarkable applications of AI in healthcare is in
-              diagnostics. Machine and learning algorithms are capable of
-              analyzing vast amounts of medical data with speed to unprecedente
-              speed and accuracy. This has led to earlier and more precise
-              disease speed detection, greatly enhancing the chances of
-              successful treatment.
-            </p>
+            <h3>{post.title}</h3>
+            {post.content.map((paragraph, idx) => (
+              <p key={idx} className="mb-3">
+                {paragraph}
+              </p>
+            ))}
+            
             <div className="hilight-text mt-4">
               <QuoteIcon />
               <p>
-                &quot;Mosico has been an invaluable partner to us. Any talent
-                we&apos;ve worked with has shown a deep understanding of digital
-                experiences. They&apos;re seamlessl integrate with our team and
-                meet the level of craft that we hold ourselves accountable with
-                our team and meet to. They&apos;re seamlessl integrate with our
-                team and meet&quot;
+                &quot;{post.quote}&quot;
               </p>
             </div>
-            <p className="mt-4 mb-5">
-              AI-driven predictive analytics are being used to forecast disease
-              outbreaks and patient admission rates, enabling hospitals and
-              healthcare facilities to allocate resources more efficiently. This
-              especially crucial during public health emergencies.
-            </p>
-            <div className="row g-4">
+            
+            <div className="row g-4 mt-4">
               <div className="col-lg-6">
                 <div className="details-image">
                   <img src="/assets/img/news/post-5.webp" alt="Blog detail" />
@@ -81,21 +109,15 @@ export default function BlogDetailsContentSection() {
                 </div>
               </div>
             </div>
-            <p className="pt-5">
-              AI-driven predictive analytics are being used to forecast disease
-              outbreaks and patient admission rates, enabling hospitals and
-              healthcare facilities to allocate resources more efficiently. This
-              iespecially crucial during public health emergencies.
-            </p>
           </div>
         </div>
         <div className="row tag-share-wrap mt-4 mb-5">
           <div className="col-lg-8 col-12">
             <div className="tagcloud">
               <span>Tags:</span>
-              <Link href="/blog/details">Marketing</Link>
-              <Link href="/blog/details">Brand</Link>
-              <Link href="/blog/details">Business</Link>
+              <Link href="/blog">Marketing</Link>
+              <Link href="/blog">Brand</Link>
+              <Link href="/blog">Business</Link>
             </div>
           </div>
           <div className="col-lg-4 col-12 mt-3 mt-lg-0 text-lg-end">
@@ -115,119 +137,6 @@ export default function BlogDetailsContentSection() {
               </a>
             </div>
           </div>
-        </div>
-        <div className="comments-area">
-          <div className="comments-heading">
-            <h3>02 Comments</h3>
-          </div>
-          <div className="blog-single-comment d-flex gap-4 pt-4 pb-5">
-            <div className="image">
-              <img src="/assets/img/news/comment.webp" alt="Commenter" />
-            </div>
-            <div className="content">
-              <div className="head d-flex flex-wrap gap-2 align-items-center justify-content-between">
-                <div className="con">
-                  <h5>
-                    <Link href="/blog/details">Leslie Alexander</Link>
-                  </h5>
-                  <span>February 10, 2025 at 2:37 pm</span>
-                </div>
-                <Link href="/blog/details" className="reply">
-                  Reply
-                </Link>
-              </div>
-              <p className="mt-30 mb-4">
-                Neque porro est qui dolorem ipsum quia quaed inventor veritatis
-                et quasi architecto var sed efficitur turpis gilla sed sit amet
-                finibus eros. Lorem Ipsum is simply dummy
-              </p>
-            </div>
-          </div>
-          <div className="blog-single-comment d-flex gap-4 pt-4 pb-5">
-            <div className="image">
-              <img src="/assets/img/news/comment-2.webp" alt="Commenter" />
-            </div>
-            <div className="content">
-              <div className="head d-flex flex-wrap gap-2 align-items-center justify-content-between">
-                <div className="con">
-                  <h5>
-                    <Link href="/blog/details">Ralph Edwards</Link>
-                  </h5>
-                  <span>February 10, 2025 at 2:37 pm</span>
-                </div>
-                <Link href="/blog/details" className="reply">
-                  Reply
-                </Link>
-              </div>
-              <p className="mt-30 mb-4">
-                Neque porro est qui dolorem ipsum quia quaed inventor veritatis
-                et quasi architecto var sed efficitur turpis gilla sed sit amet
-                finibus eros. Lorem Ipsum is simply dummy
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="comment-form-wrap pt-5">
-          <h3>Leave a Comment</h3>
-          <p>Your email address will not be published. Required fields are marked *</p>
-          <form action="#" id="contact-form" method="POST">
-            <div className="row g-4">
-              <div className="col-lg-6">
-                <div className="form-clt">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Your Name"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="form-clt">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="form-clt">
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    placeholder="Select subject"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="form-clt">
-                  <textarea
-                    name="message"
-                    id="message"
-                    placeholder="Type your message"
-                    rows={5}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <button type="submit" className="theme-btn">
-                  <span className="icon-1">
-                    <img src="/assets/img/icon/10.svg" alt="Submit" />
-                  </span>
-                  Message here
-                  <span className="icon-2">
-                    <img src="/assets/img/icon/11.svg" alt="Submit" />
-                  </span>
-                </button>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </div>

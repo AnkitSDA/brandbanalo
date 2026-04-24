@@ -24,7 +24,7 @@ export default function AboutMainSection() {
             </div>
             <div className="col-lg-6">
               <div className="about-content-2">
-                <img src="/assets/img/about/about-2.webp" alt="About" style={{ borderRadius: "20px" }} />
+                <img src="/assets/img/about/about-2.webp" alt="About" style={{ borderRadius: "20px", width: "100%" }} />
               </div>
             </div>
           </div>

@@ -6,22 +6,22 @@ import type { SwiperInstance } from "@/lib/swiper-window";
 import { getWindowSwiper } from "@/lib/swiper-window";
 
 const industries = [
-  { name: "Pharma Industries", image: "/assets/img/industries/1.webp", desc: "Precision digital marketing for pharmaceutical excellence." },
-  { name: "Car Parts Importers", image: "/assets/img/industries/2.webp", desc: "Driving growth for automotive supply chains." },
-  { name: "Road Safety Products", image: "/assets/img/industries/3.webp", desc: "Visibility and reach for safety manufacturers." },
-  { name: "Wooden Paint Mfg", image: "/assets/img/industries/4.webp", desc: "Coating the market with innovative digital strategies." },
-  { name: "Electronics Devices", image: "/assets/img/industries/5.webp", desc: "Powering electronics brands in a competitive space." },
-  { name: "Industrial Automation", image: "/assets/img/industries/6.webp", desc: "Automating your digital presence and lead generation." },
-  { name: "SMC & GRP Tanks", image: "/assets/img/industries/7.webp", desc: "Tapping into the global market for industrial storage." },
-  { name: "Offline Brand Advertisement", image: "/assets/img/industries/8.webp", desc: "Advertising your brand offline to the right audience." },
-  { name: "Bag Manufacturer", image: "/assets/img/industries/9.webp", desc: "Manufacturing bags for the right audience." },
-  { name: "Paper Bag Mfg", image: "/assets/img/industries/10.webp", desc: "Eco-friendly branding for sustainable packaging." },
-  { name: "Industrial Automation", image: "/assets/img/industries/11.webp", desc: "Automating your digital presence and lead generation." },
-  { name: "Ball Bearing Importer & Supplier", image: "/assets/img/industries/12.webp", desc: "Importing and supplying ball bearings to the right audience." },
-  { name: "Pool Table Manufacturer", image: "/assets/img/industries/13.webp", desc: "Manufacturing pool tables for the right audience." },
-  { name: "Electronics Device Supplier", image: "/assets/img/industries/14.webp", desc: "Supplying electronics devices to the right audience." },
-  { name: "Fire Safety Doors", image: "/assets/img/industries/15.webp", desc: "Securing leads for safety equipment leaders." },
-  { name: "Machinery Mfg", image: "/assets/img/industries/16.webp", desc: "Showcasing heavy-duty excellence to the right buyers." },
+  { name: "Pharma Industries", image: "/assets/img/industries/1.webp", desc: "Precision digital marketing for pharmaceutical excellence.", link: "/industrial-specific/web-development/pcd-pharma" },
+  { name: "Car Parts Importers", image: "/assets/img/industries/2.webp", desc: "Driving growth for automotive supply chains.", link: "/industrial-specific/web-development/car-parts" },
+  { name: "Road Safety Products", image: "/assets/img/industries/3.webp", desc: "Visibility and reach for safety manufacturers.", link: "/industrial-specific/web-development/road-safety" },
+  { name: "Wooden Paint Mfg", image: "/assets/img/industries/4.webp", desc: "Coating the market with innovative digital strategies.", link: "/services" },
+  { name: "Electronics Devices", image: "/assets/img/industries/5.webp", desc: "Powering electronics brands in a competitive space.", link: "/industrial-specific/web-development/electronics" },
+  { name: "Industrial Automation", image: "/assets/img/industries/6.webp", desc: "Automating your digital presence and lead generation.", link: "/industrial-specific/web-development/industrial-automation" },
+  { name: "SMC & GRP Tanks", image: "/assets/img/industries/7.webp", desc: "Tapping into the global market for industrial storage.", link: "/industrial-specific/web-development/smc-grp-tanks" },
+  { name: "Offline Brand Advertisement", image: "/assets/img/industries/8.webp", desc: "Advertising your brand offline to the right audience.", link: "/industrial-specific/web-development/offline-brand-ads" },
+  { name: "Bag Manufacturer", image: "/assets/img/industries/9.webp", desc: "Manufacturing bags for the right audience.", link: "/industrial-specific/web-development/bag-manufacturer" },
+  { name: "Paper Bag Mfg", image: "/assets/img/industries/10.webp", desc: "Eco-friendly branding for sustainable packaging.", link: "/industrial-specific/web-development/bag-manufacturer" },
+  { name: "Industrial Automation", image: "/assets/img/industries/11.webp", desc: "Automating your digital presence and lead generation.", link: "/industrial-specific/web-development/industrial-automation" },
+  { name: "Ball Bearing Importer & Supplier", image: "/assets/img/industries/12.webp", desc: "Importing and supplying ball bearings to the right audience.", link: "/industrial-specific/web-development/ball-bearing" },
+  { name: "Pool Table Manufacturer", image: "/assets/img/industries/13.webp", desc: "Manufacturing pool tables for the right audience.", link: "/industrial-specific/web-development/pool-table" },
+  { name: "Electronics Device Supplier", image: "/assets/img/industries/14.webp", desc: "Supplying electronics devices to the right audience.", link: "/industrial-specific/web-development/electronics" },
+  { name: "Fire Safety Doors", image: "/assets/img/industries/15.webp", desc: "Securing leads for safety equipment leaders.", link: "/industrial-specific/web-development/fire-safety-doors" },
+  { name: "Machinery Mfg", image: "/assets/img/industries/16.webp", desc: "Showcasing heavy-duty excellence to the right buyers.", link: "/industrial-specific/web-development/machinery-manufacturer" },
 ];
 
 export default function IndustriesSection() {
@@ -136,7 +136,17 @@ export default function IndustriesSection() {
         .industries-pagination .swiper-pagination-bullet-active { background: #0ea5e9; width: 24px; border-radius: 5px; }
 
         @media (max-width: 1024px) { .industries-header h2 { font-size: 42px; } .header-desc { font-size: 16px; } .ind-prev { left: 0; } .ind-next { right: 0; } }
-        @media (max-width: 768px) { .industries-header { flex-direction: column; align-items: flex-start; } .industries-header h2 { font-size: 36px; } .header-desc { max-width: 100%; } .ind-card { transform: scale(1); } .swiper-slide-active .ind-card { transform: scale(1.05); } }
+        @media (max-width: 768px) { 
+          .industries-header { flex-direction: column; align-items: flex-start; } 
+          .industries-header h2 { font-size: clamp(28px, 8vw, 36px); } 
+          .header-desc { max-width: 100%; } 
+          .ind-card { transform: scale(1); border-radius: 20px; } 
+          .swiper-slide-active .ind-card { transform: scale(1.02); } 
+          .ind-nav-btn { width: 40px; height: 40px; font-size: 14px; }
+          .ind-card-overlay { padding: 20px; }
+          .ind-card-overlay h3 { font-size: 20px; }
+          .plus-icon { width: 32px; height: 32px; font-size: 16px; margin-bottom: 10px; }
+        }
       ` }} />
 
       <div className="industries-slider-container">
@@ -166,7 +176,7 @@ export default function IndustriesSection() {
                   <div className="ind-card-overlay">
                     <div className="plus-icon"><i className="fa-solid fa-plus"></i></div>
                     <h3>{industry.name}</h3>
-                    <Link href="/services" className="ind-read-more">Read More</Link>
+                    <Link href={industry.link || "/services"} className="ind-read-more">Read More</Link>
                   </div>
                 </div>
               </div>

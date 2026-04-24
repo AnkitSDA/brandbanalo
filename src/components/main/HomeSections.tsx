@@ -5,7 +5,6 @@ import IndustriesSection from "@/components/sections/home/IndustriesSection";
 import HeroSection from "@/components/sections/home/HeroSection";
 import MarqueeSectionTop from "@/components/sections/home/MarqueeSectionTop";
 import MissionSection from "@/components/sections/home/MissionSection";
-import NewsSection from "@/components/sections/home/NewsSection";
 import ServiceSection from "@/components/sections/home/ServiceSection";
 import TestimonialSection from "@/components/sections/home/TestimonialSection";
 
@@ -21,7 +20,6 @@ export default function HomeSections() {
       <CaseStudySection />
       <IndustriesSection />
       <TestimonialSection />
-      <NewsSection />
     </>
   );
 }

@@ -7,6 +7,8 @@ import TestimonialSection from "@/components/sections/home/TestimonialSection";
 import BrandSection from "@/components/sections/home/BrandSection";
 import CtaTextArea from "@/components/sections/home/CtaTextArea";
 
+import Counter from "@/components/Counter";
+
 interface FAQ {
     q: string;
     a: string;
@@ -107,11 +109,11 @@ export default function MarketingArea({ locationData }: MarketingAreaProps) {
                                     <img src="/assets/img/about/about.webp" alt={`Digital Marketing ${locationData.name}`} style={{ borderRadius: "20px" }} />
                                     <div className="counter-items">
                                         <div className="content wow fadeInUp" data-wow-delay=".3s">
-                                            <h2><span className="count">2</span>Cr +</h2>
+                                            <h2><Counter end={2} suffix="Cr" /> +</h2>
                                             <p>Advertised Spend</p>
                                         </div>
                                         <div className="content wow fadeInUp" data-wow-delay=".5s">
-                                            <h2><span className="count">100</span> +</h2>
+                                            <h2><Counter end={100} /> +</h2>
                                             <p>Website Created</p>
                                         </div>
                                     </div>
@@ -140,13 +142,13 @@ export default function MarketingArea({ locationData }: MarketingAreaProps) {
                     <div className="counter-wrapper-3">
                         <div className="row g-4">
                             {[
-                                { count: "35", suffix: "+", label: "Case Studies in India", delay: ".3s" },
-                                { count: "100", suffix: "%", label: "Client Satisfaction", delay: ".5s" },
-                                { count: "80", suffix: "k", label: "Monthly ROI Increase", delay: ".7s" },
+                                { count: 35, suffix: "+", label: "Case Studies in India", delay: ".3s" },
+                                { count: 100, suffix: "%", label: "Client Satisfaction", delay: ".5s" },
+                                { count: 80, suffix: "k", label: "Monthly ROI Increase", delay: ".7s" },
                             ].map((item) => (
                                 <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={item.delay} key={item.label}>
                                     <div className="counter-box-items">
-                                        <h2><span className="count">{item.count}</span>{item.suffix}</h2>
+                                        <h2><Counter end={item.count} suffix={item.suffix} /></h2>
                                         <p>{item.label}</p>
                                     </div>
                                 </div>

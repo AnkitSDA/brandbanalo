@@ -41,11 +41,10 @@ const ServiceHeroSection: React.FC<ServiceHeroSectionProps> = ({
   return (
     <section className="hero">
       <div
-        className="hero-container"
+        className={`hero-container ${isMainPage ? 'hero-main-page' : 'hero-sub-page'}`}
         style={{
           border: "1px solid black",
           borderRadius: "50px",
-          padding: isMainPage ? " 120px 10px 200px 10px" : " 30px 10px 200px 10px",
         }}
       >
         <p className="hero-subtitle">
@@ -63,8 +62,7 @@ const ServiceHeroSection: React.FC<ServiceHeroSectionProps> = ({
       </div>
 
       <div
-        className="hero-image"
-        style={{ marginTop: "-230px", zIndex: "auto", position: "relative" }}
+        className="hero-image-wrapper"
       >
         <img
           src={displayImage}
@@ -74,7 +72,7 @@ const ServiceHeroSection: React.FC<ServiceHeroSectionProps> = ({
           style={{ width: "100%", maxWidth: "700px", display: "block", margin: "auto", position: "relative", zIndex: 1 }}
         />
 
-        <div style={{ padding: "50px 200px", textAlign: "center" }}>
+        <div className="hero-description-container">
           <p>{displayDescription}</p>
         </div>
       </div>

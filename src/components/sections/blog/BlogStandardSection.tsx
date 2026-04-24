@@ -4,21 +4,21 @@ import BlogSidebar from "./BlogSidebar";
 const standardPosts = [
   {
     img: "post-1.webp",
-    category: "BRANDING",
-    date: "05 September 2025",
-    title: "How digital agencies drive business success and growth",
+    category: "MARKETING",
+    date: "15 October 2025",
+    title: "Digital Marketing agency for E-commerce Startup",
   },
   {
     img: "post-2.webp",
-    category: "BRANDING",
-    date: "05 September 2025",
-    title: "Choosing the right digital agency for business growth",
+    category: "STRATEGY",
+    date: "20 October 2025",
+    title: "Brand Banalo best Digital marketing agency for Lead Generation",
   },
   {
     img: "post-3.webp",
-    category: "BRANDING",
-    date: "05 September 2025",
-    title: "Top digital agency trends shaping the future market",
+    category: "BUSINESS",
+    date: "25 October 2025",
+    title: "Best Business Making Company to Grow your Company",
     isLast: true,
   },
 ];
@@ -40,16 +40,16 @@ export default function BlogStandardSection() {
                 <div className="content">
                   <ul className="cat-list">
                     <li>
-                      <Link href="/blog/details">{post.category}</Link>
+                      <Link href={`/blog/details?slug=${post.title.toLowerCase().replace(/ /g, '-')}`}>{post.category}</Link>
                     </li>
                     <li>
                       <span>{post.date}</span>
                     </li>
                   </ul>
                   <h3>
-                    <Link href="/blog/details">{post.title}</Link>
+                    <Link href={`/blog/details?slug=${post.title.toLowerCase().replace(/ /g, '-')}`}>{post.title}</Link>
                   </h3>
-                  <Link href="/blog/details" className="theme-btn">
+                  <Link href={`/blog/details?slug=${post.title.toLowerCase().replace(/ /g, '-')}`} className="theme-btn">
                     <span className="icon-1">
                       <img src="/assets/img/icon/10.svg" alt="Read more" />
                     </span>

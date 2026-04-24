@@ -545,7 +545,7 @@
       }
     }
     $(function () {
-      mousecursor();
+      // mousecursor();
     });
 
     //>> Back To Top Slider Start <<//

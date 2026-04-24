@@ -23,19 +23,13 @@ export default function BlogSidebar() {
         <div className="news-widget-categories">
           <ul>
             <li>
-              <Link href="/blog/details">Agency</Link> <span>(03)</span>
+              <Link href="/blog">Business</Link> <span>(01)</span>
             </li>
             <li>
-              <Link href="/blog/details">Business</Link> <span>(01)</span>
-            </li>
-            <li className="active">
-              <Link href="/blog/details">Development</Link> <span>(05)</span>
+              <Link href="/blog">Marketing</Link> <span>(01)</span>
             </li>
             <li>
-              <Link href="/blog/details">UI UX Design</Link> <span>(02)</span>
-            </li>
-            <li>
-              <Link href="/blog/details">Marketing</Link> <span>(04)</span>
+              <Link href="/blog">Strategy</Link> <span>(01)</span>
             </li>
           </ul>
         </div>
@@ -51,12 +45,12 @@ export default function BlogSidebar() {
             </div>
             <div className="recent-content">
               <h6>
-                <Link href="/blog/details">
-                  How digital agencies drive business success
+                <Link href="/blog/details?slug=digital-marketing-agency-for-e-commerce-startup">
+                  Digital Marketing agency for E-commerce Startup
                 </Link>
               </h6>
               <ul>
-                <li>March 26, 2025</li>
+                <li>Oct 15, 2025</li>
               </ul>
             </div>
           </div>
@@ -66,12 +60,12 @@ export default function BlogSidebar() {
             </div>
             <div className="recent-content">
               <h6>
-                <Link href="/blog/details">
-                  Choosing the right digital agency for busine
+                <Link href="/blog/details?slug=brand-banalo-best-digital-marketing-agency-for-lead-generation">
+                  Brand Banalo best Digital marketing agency for Lead Generation
                 </Link>
               </h6>
               <ul>
-                <li>March 26, 2025</li>
+                <li>Oct 20, 2025</li>
               </ul>
             </div>
           </div>
@@ -81,12 +75,12 @@ export default function BlogSidebar() {
             </div>
             <div className="recent-content">
               <h6>
-                <Link href="/blog/details">
-                  Top digital agency trends shaping the futur
+                <Link href="/blog/details?slug=best-business-making-company-to-grow-your-company">
+                  Best Business Making Company to Grow your Company
                 </Link>
               </h6>
               <ul>
-                <li>March 26, 2025</li>
+                <li>Oct 25, 2025</li>
               </ul>
             </div>
           </div>
@@ -98,14 +92,12 @@ export default function BlogSidebar() {
         </div>
         <div className="news-widget-categories">
           <div className="tagcloud">
-            <Link href="/blog/details">Business</Link>
-            <Link href="/blog/details">Analysis</Link>
-            <Link href="/blog/details">Technology</Link>
-            <Link href="/blog/details">Brand</Link>
-            <Link href="/blog/details">Experience</Link>
-            <Link href="/blog/details">Creative</Link>
-            <Link href="/blog/details">Design</Link>
-            <Link href="/blog/details">Awards</Link>
+            <Link href="/blog">Business</Link>
+            <Link href="/blog">Marketing</Link>
+            <Link href="/blog">Brand</Link>
+            <Link href="/blog">Lead Gen</Link>
+            <Link href="/blog">Startup</Link>
+            <Link href="/blog">Growth</Link>
           </div>
         </div>
       </div>

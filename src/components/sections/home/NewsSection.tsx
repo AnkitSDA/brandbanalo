@@ -9,25 +9,46 @@ export default function NewsSection() {
       </div>
       <div className="container custom-container-2">
         <div className="row">
-          {[4, 5, 6, 7].map((idx, index) => (
+          {[
+            {
+              id: 1,
+              title: "Digital Marketing agency for E-commerce Startup",
+              cat: "MARKETING",
+              date: "October 15, 2025",
+              img: "post-4.webp"
+            },
+            {
+              id: 2,
+              title: "Brand Banalo best Digital marketing agency for Lead Generation",
+              cat: "STRATEGY",
+              date: "October 20, 2025",
+              img: "post-5.webp"
+            },
+            {
+              id: 3,
+              title: "Best Business Making Company to Grow your Company",
+              cat: "BUSINESS",
+              date: "October 25, 2025",
+              img: "post-4.webp"
+            }
+          ].map((post, index) => (
             <div
-              className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
+              className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
               data-wow-delay={`${0.2 + index * 0.2}s`}
-              key={idx}
+              key={post.id}
             >
               <div className="news-box-items-2">
                 <div className="thumb">
-                  <img src={`/assets/img/news/post-${idx > 5 ? (idx % 2 === 0 ? 4 : 5) : idx}.webp`} alt="News" />
-                  <a href="/blog/details" className="post-cat">
-                    technology
+                  <img src={`/assets/img/news/${post.img}`} alt={post.title} />
+                  <a href={`/blog/details?slug=${post.title.toLowerCase().replace(/ /g, '-')}`} className="post-cat">
+                    {post.cat}
                   </a>
                 </div>
                 <div className="content">
-                  <p>August 17, 2025</p>
+                  <p>{post.date}</p>
                   <h3>
-                    <a href="/blog/details">
-                      Contrary to popular belief, Lorem Ipsum is not simply random
-                      text. It has roots
+                    <a href={`/blog/details?slug=${post.title.toLowerCase().replace(/ /g, '-')}`}>
+                      {post.title}
                     </a>
                   </h3>
                 </div>

@@ -3,7 +3,7 @@ export default function MissionSection() {
     <section className="mission-section theme-bg-2 fix section-padding pb-0">
       <div className="container">
         <div className="section-title text-center">
-          <h6 className="text-white wow fadeInUp">our mission &amp; vission</h6>
+          <h6 className="text-white wow fadeInUp">our mission &amp; vision</h6>
           <h2 className="text-white tp_reveal_anim">
             Tailored Solutions, Proven Results, <br /> and Exceptional Service
           </h2>
@@ -24,7 +24,7 @@ export default function MissionSection() {
             <div className="col-xl-4">
               <div className="mission-content">
                 <div className="header-title wow fadeInUp" data-wow-delay=".3s">
-                  <h5>our mission &amp; vission</h5>
+                  <h5>our mission &amp; vision</h5>
                   <h3>Empowering skills to help you!</h3>
                 </div>
                 <ul className="list-items wow fadeInUp" data-wow-delay=".5s">

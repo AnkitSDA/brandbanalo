@@ -1,3 +1,5 @@
+import Counter from "@/components/Counter";
+
 export default function AboutSection() {
   return (
     <section className="about-section-2 fix">
@@ -47,22 +49,30 @@ export default function AboutSection() {
             </div>
             <div className="col-lg-6">
               <div className="about-content-2">
-                <img src="/assets/img/about/about.webp" alt="About" style={{ borderRadius: "20px" }} />
+                <img src="/assets/img/about/about.webp" alt="About" style={{ borderRadius: "20px", width: "100%" }} />
                 <div className="counter-items">
                   <div className="content wow fadeInUp" data-wow-delay=".3s">
                     <h2>
-                      <span className="count">2</span>Cr +
+                      <Counter end={2} suffix="Cr" /> +
                     </h2>
                     <p>Advertised Spend</p>
                   </div>
                   <div className="content wow fadeInUp" data-wow-delay=".5s">
                     <h2>
-                      <span className="count">100</span> +
+                      <Counter end={100} /> +
                     </h2>
                     <p>Website Created</p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="p-relative about-video full-img-wrap3">
+            <div
+              className="full-img3"
+              data-speed="auto"
+              data-background="/assets/img/about/about-meme.png"
+            >
             </div>
           </div>
         </div>

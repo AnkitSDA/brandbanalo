@@ -10,32 +10,38 @@ const industries = [
     { 
         name: "Modern Surgical Facilities", 
         image: "/assets/img/industries/1.webp",
-        desc: "Advanced medical branding and digital outreach."
+        desc: "Advanced medical branding and digital outreach.",
+        link: "/industrial-specific/web-development/healthcare"
     },
     { 
         name: "Pharma Excellence", 
         image: "/assets/img/industries/8.webp",
-        desc: "Precision digital marketing for pharmaceutical leaders."
+        desc: "Precision digital marketing for pharmaceutical leaders.",
+        link: "/industrial-specific/web-development/pcd-pharma"
     },
     { 
         name: "Automotive Solutions", 
         image: "/assets/img/industries/2.webp",
-        desc: "Driving growth for the automotive supply chain."
+        desc: "Driving growth for the automotive supply chain.",
+        link: "/industrial-specific/web-development/car-parts"
     },
     { 
         name: "Industrial Automation", 
         image: "/assets/img/industries/6.webp",
-        desc: "Showcasing heavy-duty excellence to global buyers."
+        desc: "Showcasing heavy-duty excellence to global buyers.",
+        link: "/industrial-specific/web-development/industrial-automation"
     },
     { 
         name: "Eco-Friendly Packaging", 
         image: "/assets/img/industries/12.webp",
-        desc: "Branding for a sustainable and green future."
+        desc: "Branding for a sustainable and green future.",
+        link: "/industrial-specific/web-development/bag-manufacturer"
     },
     { 
         name: "Fire Safety Systems", 
         image: "/assets/img/industries/17.webp",
-        desc: "Securing leads for critical safety equipment."
+        desc: "Securing leads for critical safety equipment.",
+        link: "/industrial-specific/web-development/fire-safety-doors"
     }
 ];
 
@@ -138,7 +144,7 @@ export default function IndustrySliderSection() {
                                             <i className="fa-solid fa-plus"></i>
                                         </div>
                                         <h3>{industry.name}</h3>
-                                        <Link href="/services" className="industry-read-more">
+                                        <Link href={industry.link || "/services"} className="industry-read-more">
                                             Read More
                                         </Link>
                                     </div>

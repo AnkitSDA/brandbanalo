@@ -36,46 +36,94 @@ export default function CaseStudyDetailsContentSection({
 
   return (
     <div className="details-content">
-      <h2>{displayCaseStudy.title}</h2>
-      <p className="mb-3">{displayCaseStudy.description}</p>
+      <h2 style={{ fontSize: '36px', fontWeight: '800', color: '#1a1a1a', marginBottom: '15px' }}>{displayCaseStudy.title}</h2>
+      <p style={{ fontSize: '18px', color: '#666', lineHeight: '1.6', marginBottom: '40px' }}>{displayCaseStudy.description}</p>
       
-      <h3>Case Study Overview</h3>
-      <p className="mb-5">
-        {content.overview}
-      </p>
+      <div className="content-block mb-5">
+        <h3 className="d-flex align-items-center gap-3" style={{ fontSize: '24px', fontWeight: '700', color: '#3b286d', marginBottom: '20px' }}>
+          <i className="fas fa-search-plus" style={{ fontSize: '20px', opacity: 0.7 }} />
+          Case Study Overview
+        </h3>
+        <p style={{ fontSize: '16px', color: '#444', lineHeight: '1.8' }}>
+          {content.overview}
+        </p>
+      </div>
 
-      <h3>Challenges &amp; Objectives</h3>
-      <p className="mb-5">
-        {content.challenges}
-      </p>
+      <div className="content-block mb-5">
+        <h3 className="d-flex align-items-center gap-3" style={{ fontSize: '24px', fontWeight: '700', color: '#3b286d', marginBottom: '20px' }}>
+          <i className="fas fa-bullseye" style={{ fontSize: '20px', opacity: 0.7 }} />
+          Challenges &amp; Objectives
+        </h3>
+        <p style={{ fontSize: '16px', color: '#444', lineHeight: '1.8' }}>
+          {content.challenges}
+        </p>
+      </div>
 
-      <h3>Our Solution &amp; Strategy</h3>
-      <p className="mb-5">
-        {content.solution}
-      </p>
+      <div className="content-block mb-5">
+        <h3 className="d-flex align-items-center gap-3" style={{ fontSize: '24px', fontWeight: '700', color: '#3b286d', marginBottom: '20px' }}>
+          <i className="fas fa-lightbulb" style={{ fontSize: '20px', opacity: 0.7 }} />
+          Our Solution &amp; Strategy
+        </h3>
+        <p style={{ fontSize: '16px', color: '#444', lineHeight: '1.8' }}>
+          {content.solution}
+        </p>
+      </div>
 
-      <h3>Key Features Implemented</h3>
-      <ul className="mb-5" style={{ paddingLeft: "20px" }}>
-        {content.keyFeatures.map((feature, index) => (
-          <li key={index} style={{ marginBottom: "8px", color: "#555" }}>
-            {feature}
-          </li>
-        ))}
-      </ul>
+      <div className="content-block mb-5">
+        <h3 className="d-flex align-items-center gap-3" style={{ fontSize: '24px', fontWeight: '700', color: '#3b286d', marginBottom: '20px' }}>
+          <i className="fas fa-star" style={{ fontSize: '20px', opacity: 0.7 }} />
+          Key Features Implemented
+        </h3>
+        <div className="row g-3">
+          {content.keyFeatures.map((feature, index) => (
+            <div key={index} className="col-md-6">
+              <div className="feature-item d-flex align-items-start gap-2" style={{ 
+                background: '#fff', 
+                padding: '15px 20px', 
+                borderRadius: '12px', 
+                border: '1px solid #f0f0f0',
+                height: '100%'
+              }}>
+                <i className="fas fa-check-circle" style={{ color: '#3b286d', marginTop: '4px', fontSize: '14px' }} />
+                <span style={{ fontSize: '15px', color: '#444', fontWeight: '500' }}>{feature}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <h3>Results &amp; Impact</h3>
-      <p className="mb-5">
-        {content.results}
-      </p>
+      <div className="content-block mb-5">
+        <h3 className="d-flex align-items-center gap-3" style={{ fontSize: '24px', fontWeight: '700', color: '#3b286d', marginBottom: '20px' }}>
+          <i className="fas fa-chart-line" style={{ fontSize: '20px', opacity: 0.7 }} />
+          Results &amp; Impact
+        </h3>
+        <p style={{ fontSize: '16px', color: '#444', lineHeight: '1.8' }}>
+          {content.results}
+        </p>
+      </div>
 
-      <h3>Key Benefits Delivered</h3>
-      <ul className="mb-5" style={{ paddingLeft: "20px" }}>
-        {content.benefits.map((benefit, index) => (
-          <li key={index} style={{ marginBottom: "8px", color: "#555" }}>
-            {benefit}
-          </li>
-        ))}
-      </ul>
+      <div className="content-block mb-5">
+        <h3 className="d-flex align-items-center gap-3" style={{ fontSize: '24px', fontWeight: '700', color: '#3b286d', marginBottom: '20px' }}>
+          <i className="fas fa-award" style={{ fontSize: '20px', opacity: 0.7 }} />
+          Key Benefits Delivered
+        </h3>
+        <div className="row g-3">
+          {content.benefits.map((benefit, index) => (
+            <div key={index} className="col-md-6">
+              <div className="benefit-item d-flex align-items-start gap-2" style={{ 
+                background: '#3b286d', 
+                padding: '15px 20px', 
+                borderRadius: '12px',
+                color: '#fff',
+                height: '100%'
+              }}>
+                <i className="fas fa-arrow-right" style={{ color: 'rgba(255,255,255,0.6)', marginTop: '4px', fontSize: '12px' }} />
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>{benefit}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
