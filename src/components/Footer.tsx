@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import "@/styles/css/footer.css";
+// import "@/styles/css/footer.css";
 import { useState, type FormEvent } from "react";
 import { submitToMailHandler } from "@/lib/mailHandler";
 
@@ -169,7 +169,7 @@ export default function Footer({ marquee }: { marquee?: React.ReactNode }) {
             <Link href="/terms">Terms & Conditions</Link>
           </div>
           <div className="copyright" suppressHydrationWarning>
-            Managed by <Link href="brandbanalo.com" style={{ color: '#ff6b35', textDecoration: 'none' }} suppressHydrationWarning>brandbanalo</Link>
+            Managed by <Link href="/" style={{ color: '#ff6b35', textDecoration: 'none' }} suppressHydrationWarning>brandbanalo</Link>
           </div>
         </div>
       </div>

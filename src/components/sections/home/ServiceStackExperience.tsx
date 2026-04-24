@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRef, useEffect } from "react";
-// import "@/styles/css/ServiceStackSection.css";
+import "@/styles/css/ServiceStackSection.css";
 
 const services = [
   {
