@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-// import "@/styles/css/footer.css";
+import "@/styles/css/footer.css";
 import { useState, type FormEvent } from "react";
 import { submitToMailHandler } from "@/lib/mailHandler";
 
