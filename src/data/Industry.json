@@ -45,28 +45,6 @@
       "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
     },
     {
-      "id": "004",
-      "key": "meta-ads",
-      "name": "Meta Ads",
-      "sidebarLabel": "Meta Ads",
-      "listTitle": "Meta Ads",
-      "heroTitle": "Meta Ads",
-      "heroSubtitle": "Performance on Facebook & Instagram",
-      "heroDescription": "We run Meta ads for D2C and E-commerce sales and for B2B lead generation—using creative testing, audience strategy, and conversion-focused landing pages that improve ROI.",
-      "image": "/assets/img/service/Meta.webp",
-      "sections": [
-        {
-          "heading": "Creative Testing for Real Business Outcomes",
-          "body": "We build and iterate on ad creatives and targeting to find what works for your audience—so every campaign delivers consistent cost per result and scalable performance."
-        },
-        {
-          "heading": "What We Provide",
-          "body": "Campaign setup, pixel + tracking, audience research, ad creative concepts (UGC/video-friendly), landing page alignment, and weekly optimization."
-        }
-      ],
-      "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
-    },
-    {
       "id": "003",
       "key": "google-ads",
       "name": "Google Ads",
@@ -89,23 +67,45 @@
       "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
     },
     {
-      "id": "012",
-      "key": "website-design",
-      "name": "Website Design",
-      "sidebarLabel": "Website Design",
-      "listTitle": "Website Design",
-      "heroTitle": "Website Design",
-      "heroSubtitle": "Design that Inspires Conversion",
-      "heroDescription": "We create design-led websites that elevate your brand, build trust, and convert visitors into customers with premium digital experiences.",
-      "image": "/assets/img/Service-main/WebDesign.webp",
+      "id": "004",
+      "key": "meta-ads",
+      "name": "Meta Ads",
+      "sidebarLabel": "Meta Ads",
+      "listTitle": "Meta Ads",
+      "heroTitle": "Meta Ads",
+      "heroSubtitle": "Performance on Facebook & Instagram",
+      "heroDescription": "We run Meta ads for D2C and E-commerce sales and for B2B lead generation—using creative testing, audience strategy, and conversion-focused landing pages that improve ROI.",
+      "image": "/assets/img/service/Meta.webp",
       "sections": [
         {
-          "heading": "Conversion-First UI/UX",
-          "body": "We design websites with clear user journeys, compelling visuals, and conversion-focused layouts that improve engagement and enquiries."
+          "heading": "Creative Testing for Real Business Outcomes",
+          "body": "We build and iterate on ad creatives and targeting to find what works for your audience—so every campaign delivers consistent cost per result and scalable performance."
         },
         {
           "heading": "What We Provide",
-          "body": "Landing page design, responsive layouts, brand-led interfaces, and usability-first experiences that help your business stand out online."
+          "body": "Campaign setup, pixel + tracking, audience research, ad creative concepts (UGC/video-friendly), landing page alignment, and weekly optimization."
+        }
+      ],
+      "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
+    },
+    {
+      "id": "005",
+      "key": "branding-kit",
+      "name": "Branding Kit",
+      "sidebarLabel": "Branding Kit",
+      "listTitle": "Branding Kit",
+      "heroTitle": "Branding Kit",
+      "heroSubtitle": "Consistent Brand Assets for Growth",
+      "heroDescription": "A complete branding kit that keeps your visuals consistent across your website, ads, social, and video—helping E-commerce, B2B, and D2C brands build trust and recognition.",
+      "image": "/assets/img/service/Branding.webp",
+      "sections": [
+        {
+          "heading": "Brand Consistency Across Every Channel",
+          "body": "We design logos, typography, colours, and reusable templates so your marketing stays on-brand everywhere customers discover you."
+        },
+        {
+          "heading": "What We Provide",
+          "body": "Logo variants, style guide, social and ad templates, landing page design direction, and digital assets that support campaigns and growth."
         }
       ],
       "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
@@ -134,6 +134,28 @@
     },
     {
       "id": "008",
+      "key": "influancer-marketing",
+      "name": "Influencer Marketing",
+      "sidebarLabel": "Influencer Marketing",
+      "listTitle": "Influencer Marketing",
+      "heroTitle": "Influencer Marketing",
+      "heroSubtitle": "Trusted Voices for Growth",
+      "heroDescription": "We run influencer campaigns that create credible awareness and conversion-ready content for E-commerce, D2C, and B2B buyers—measurable across reach, leads, and sales.",
+      "image": "/assets/img/service/Influancer.webp",
+      "sections": [
+        {
+          "heading": "Influence with Real Business Intent",
+          "body": "We match influencers to your niche and audience so campaigns feel authentic and deliver tangible results—from engagement to enquiries and purchases."
+        },
+        {
+          "heading": "What We Provide",
+          "body": "Influencer selection, campaign planning, creative briefing, UGC-style deliverables, and performance reporting for every collaboration."
+        }
+      ],
+      "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
+    },
+    {
+      "id": "009",
       "key": "ugc-marketing",
       "name": "UGC Marketing",
       "sidebarLabel": "UGC Marketing",
@@ -155,28 +177,6 @@
       "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
     },
     {
-      "id": "009",
-      "key": "influancer-marketing",
-      "name": "Influancer Marketing",
-      "sidebarLabel": "Influancer Marketing",
-      "listTitle": "Influancer Marketing",
-      "heroTitle": "Influancer Marketing",
-      "heroSubtitle": "Trusted Voices for Growth",
-      "heroDescription": "We run influencer campaigns that create credible awareness and conversion-ready content for E-commerce, D2C, and B2B buyers—measurable across reach, leads, and sales.",
-      "image": "/assets/img/service/Influancer.webp",
-      "sections": [
-        {
-          "heading": "Influence with Real Business Intent",
-          "body": "We match influencers to your niche and audience so campaigns feel authentic and deliver tangible results—from engagement to enquiries and purchases."
-        },
-        {
-          "heading": "What We Provide",
-          "body": "Influencer selection, campaign planning, creative briefing, UGC-style deliverables, and performance reporting for every collaboration."
-        }
-      ],
-      "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
-    },
-    {
       "id": "010",
       "key": "video-creation",
       "name": "Video Creation",
@@ -185,7 +185,7 @@
       "heroTitle": "Video Creation",
       "heroSubtitle": "Short-Form & Product Stories",
       "heroDescription": "We create performance-ready videos—product demos, reels, ads, and testimonials—for E-commerce launches, B2B explainers, and D2C retention campaigns.",
-      "image": "/assets/img/service/Video%20creation.webp",
+      "image": "/assets/img/service/video.webp",
       "sections": [
         {
           "heading": "Videos Built for Attention and Action",
@@ -201,10 +201,10 @@
     {
       "id": "011",
       "key": "product-photography",
-      "name": "Product Photogaphy",
-      "sidebarLabel": "Product Photogaphy",
-      "listTitle": "Product Photogaphy",
-      "heroTitle": "Product Photogaphy",
+      "name": "Product Photography",
+      "sidebarLabel": "Product Photography",
+      "listTitle": "Product Photography",
+      "heroTitle": "Product Photography",
       "heroSubtitle": "E-commerce Ready Visuals",
       "heroDescription": "High-quality product photography and shoots for E-commerce catalogs, D2C product pages, and B2B catalogs—so your creatives look premium across websites and ads.",
       "image": "/assets/img/service/ProductShoot.webp",
@@ -221,45 +221,23 @@
       "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
     },
     {
-      "id": "005",
-      "key": "branding-kit",
-      "name": "Branding Kit",
-      "sidebarLabel": "Branding Kit",
-      "listTitle": "Branding Kit",
-      "heroTitle": "Branding Kit",
-      "heroSubtitle": "Consistent Brand Assets for Growth",
-      "heroDescription": "A complete branding kit that keeps your visuals consistent across your website, ads, social, and video—helping E-commerce, B2B, and D2C brands build trust and recognition.",
-      "image": "/assets/img/service/Branding.webp",
+      "id": "012",
+      "key": "website-design",
+      "name": "Website Design",
+      "sidebarLabel": "Website Design",
+      "listTitle": "Website Design",
+      "heroTitle": "Website Design",
+      "heroSubtitle": "Design that Inspires Conversion",
+      "heroDescription": "We create design-led websites that elevate your brand, build trust, and convert visitors into customers with premium digital experiences.",
+      "image": "/assets/img/Service-main/WebDesign.webp",
       "sections": [
         {
-          "heading": "Brand Consistency Across Every Channel",
-          "body": "We design logos, typography, colours, and reusable templates so your marketing stays on-brand everywhere customers discover you."
+          "heading": "Conversion-First UI/UX",
+          "body": "We design websites with clear user journeys, compelling visuals, and conversion-focused layouts that improve engagement and enquiries."
         },
         {
           "heading": "What We Provide",
-          "body": "Logo variants, style guide, social and ad templates, landing page design direction, and digital assets that support campaigns and growth."
-        }
-      ],
-      "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
-    },
-    {
-      "id": "013",
-      "key": "lead-generation",
-      "name": "Lead Generation",
-      "sidebarLabel": "Lead Generation",
-      "listTitle": "Lead Generation",
-      "heroTitle": "Lead Generation",
-      "heroSubtitle": "Systems for Consistent Enquiries",
-      "heroDescription": "We design lead funnels, landing pages, and nurturing journeys that consistently bring in qualified prospects for your business.",
-      "image": "/assets/img/Service-main/Lead-Gene.webp",
-      "sections": [
-        {
-          "heading": "Consistent, Qualified Leads",
-          "body": "We design lead generation funnels that attract the right audience and move them from awareness to enquiry. Our strategies combine content, ads, and landing pages that are aligned around a single conversion goal."
-        },
-        {
-          "heading": "What We Provide",
-          "body": "We set up high-converting forms, lead magnets, and nurturing flows. You get transparent reporting on lead volume, quality, and cost per lead so you can clearly see the value of your marketing."
+          "body": "Landing page design, responsive layouts, brand-led interfaces, and usability-first experiences that help your business stand out online."
         }
       ],
       "agencySummary": "Brandbanalo is a results-driven digital marketing agency that helps businesses grow, scale, and build a strong online presence in the digital age. With a focus on creativity, strategy, and performance, we empower brands to reach the right audience and achieve measurable success. We offer a complete range of digital services, including website development, search engine optimization (SEO), Google & Meta ads management, lead generation, social media management, and branding & design solutions. From startups to established enterprises, Brandbanalo provides customized strategies that drive traffic, increase conversions, and enhance brand visibility. Our expertise spans across multiple industries, delivering innovative marketing solutions backed by data, insights, and continuous optimization. With a structured approach—from research and strategy to execution and performance monitoring—we ensure consistent growth and long-term success for our clients."
@@ -270,7 +248,7 @@
       "id": "ind-001",
       "name": "PCD Pharma Industries",
       "description": "We help pharma companies build trust and generate high-intent enquiries through compliant, informative websites and targeted digital campaigns.",
-      "image": "/assets/img/industries-specific-main/PCD Pharma Industries.webp",
+      "image": "/assets/img/industries-specific-main/pcdpharmaindustries.webp",
       "pageContent": {
         "heroTitle": "Digital Marketing For PCD Pharma Franchise",
         "heroSubtitle": "Digital Marketing For PCD Pharma Franchise",
@@ -365,7 +343,7 @@
       "id": "ind-002",
       "name": "Car Parts Importer & Suppliers",
       "description": "For automotive importers and suppliers, we focus on product visibility, dealer enquiries, and local search optimisation to drive more orders.",
-      "image": "/assets/img/industries-specific-main/Car Parts Importer & Suppliers.webp",
+      "image": "/assets/img/industries-specific-main/carpartsimporter&suppliers.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "004", "007"],
       "key": "car-parts",
       "serviceOverrides": {
@@ -415,7 +393,7 @@
       "id": "ind-003",
       "name": "Road Safety Product Manufacturer",
       "description": "We position safety product brands as reliable partners for government and infrastructure companies with clear messaging and targeted campaigns.",
-      "image": "/assets/img/industries-specific-main/Road Safety Product Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/roadsafetyproductmanufacturer.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "key": "road-safety",
       "serviceOverrides": {
@@ -465,7 +443,7 @@
       "id": "ind-004",
       "name": "Electronics Devices Supplier",
       "description": "We help electronics suppliers showcase product lines, highlight specifications, and capture B2B enquiries through conversion-focused experiences.",
-      "image": "/assets/img/industries-specific-main/Electronics Devices Supplier.webp",
+      "image": "/assets/img/industries-specific-main/electronicsdevicessupplier.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -523,7 +501,7 @@
       "id": "ind-005",
       "name": "Industrial Automation Solutions",
       "description": "For industrial automation brands, we simplify complex offerings into clear value propositions that resonate with decision makers and engineers.",
-      "image": "/assets/img/industries-specific-main/Industrial Automation Solutions.webp",
+      "image": "/assets/img/industries-specific-main/industrialautomationsolutions.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -581,7 +559,7 @@
       "id": "ind-006",
       "name": "Healthcare - Setup",
       "description": "We support hospitals, clinics, and healthcare setups with patient-centric websites, appointment funnels, and local visibility strategies.",
-      "image": "/assets/img/industries-specific-main/Healthcare - Setup.webp",
+      "image": "/assets/img/industries-specific-main/healthcare-setup.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "key": "healthcare",
       "serviceOverrides": {
@@ -632,7 +610,7 @@
       "key": "smc-grp-tanks",
       "name": "SMC & GRP Tanks Manufacturer",
       "description": "We support SMC & GRP Tanks Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/SMC & GRP Tanks Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/smc&grptanksmanufacturer.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "serviceOverrides": {
         "web-development": {
@@ -682,7 +660,7 @@
       "key": "offline-brand-ads",
       "name": "Offline Brand Advertisement",
       "description": "We support Offline Brand Advertisement with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Offline Brand Advertisement.webp",
+      "image": "/assets/img/industries-specific-main/offlinebrandadvertisement.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "serviceOverrides": {
         "web-development": {
@@ -732,7 +710,7 @@
       "key": "bag-manufacturer",
       "name": "Bag Manufacturer",
       "description": "We support Bag Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Bag Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/bagmanufacturer.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "serviceOverrides": {
         "web-development": {
@@ -782,7 +760,7 @@
       "key": "machinery-manufacturer",
       "name": "Machinery Manufacturer",
       "description": "We support Machinery Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Machinery Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/machinerymanufacturer.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "serviceOverrides": {
         "web-development": {
@@ -832,7 +810,7 @@
       "key": "ball-bearing",
       "name": "Ball Bearing Importer & Supplier",
       "description": "We support Ball Bearing Importer & Supplier with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Ball Bearing Importer & Supplier.webp",
+      "image": "/assets/img/industries-specific-main/ballbearingimporter&supplier.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "serviceOverrides": {
         "web-development": {
@@ -882,7 +860,7 @@
       "key": "pool-table",
       "name": "Pool Table Manufacturer",
       "description": "We support Pool Table Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Pool Table Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/pooltablemanufacturer.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "serviceOverrides": {
         "web-development": {
@@ -932,7 +910,7 @@
       "key": "fire-safety-doors",
       "name": "Fire Safety Doors Manufacturer",
       "description": "We support Fire Safety Doors Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Fire Safety Doors Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/firesafetydoorsmanufacturer.webp",
       "recommendedServiceIds": ["001", "002", "006", "012", "005", "007"],
       "serviceOverrides": {
         "web-development": {

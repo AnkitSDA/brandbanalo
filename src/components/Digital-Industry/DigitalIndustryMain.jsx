@@ -1,32 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import digitalIndustries from "@/data/DigitalIndustry.json";
 import DigitalIndustryDetails from "./DigitalIndustryDetails";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
 
 const DigitalIndustryMain = () => {
   const [selectedIndustry, setSelectedIndustry] = useState(null);
@@ -42,91 +19,120 @@ const DigitalIndustryMain = () => {
 
   if (selectedIndustry) {
     return (
-      <DigitalIndustryDetails 
-        industry={selectedIndustry} 
-        onBack={handleBack} 
+      <DigitalIndustryDetails
+        industry={selectedIndustry}
+        onBack={handleBack}
       />
     );
   }
 
   return (
-    <section className="digital-industry-section py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#f6f7fb] overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <header className="max-w-3xl mx-auto text-center mb-20 sm:mb-24">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0a1020] mb-6 font-sora tracking-tight leading-[1.1]"
-          >
-            Industries We <span className="text-[#3b82f6]">Empower</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg sm:text-xl text-[#5b6472] leading-relaxed font-manrope"
-          >
-            Tailored digital marketing strategies for specialized sectors. We navigate the unique complexities of your market to drive sustainable business growth.
-          </motion.p>
-        </header>
-
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10"
-        >
-          {digitalIndustries.map((industry) => (
-            <motion.div
-              key={industry.id}
-              variants={cardVariants}
-              whileHover={{ y: -10 }}
-              className="group cursor-pointer bg-white rounded-[2rem] border border-transparent hover:border-[#e2e8f0] overflow-hidden transition-all duration-500 shadow-[0_5px_15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(10,16,32,0.12)] flex flex-col h-full"
-              onClick={() => handleCardClick(industry)}
-            >
-              <div className="aspect-[16/10] overflow-hidden relative">
-                <img
-                  src={industry.image}
-                  alt={industry.name}
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1020]/90 via-[#0a1020]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <p className="text-white/80 text-sm font-manrope mb-2">Explore Solution</p>
-                    <span className="text-white font-semibold flex items-center gap-2 group/btn">
-                      View Strategy
-                      <svg className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="p-8 sm:p-10 flex flex-col flex-1">
-                <h3 className="text-2xl font-bold text-[#0a1020] mb-4 font-sora leading-tight group-hover:text-[#3b82f6] transition-colors duration-300">
-                  {industry.name}
-                </h3>
-                <p className="text-[#5b6472] font-manrope text-[15px] leading-relaxed line-clamp-3 mb-6">
-                  {industry.description}
-                </p>
-                <div className="mt-auto flex items-center gap-2 text-[#3b82f6] font-semibold text-sm font-manrope">
-                  <span className="w-8 h-[2px] bg-[#3b82f6] group-hover:w-12 transition-all duration-500" />
-                  Read More
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+    <section className="digital-industry-section py-5 px-3" style={{ background: '#f8f9fa', position: 'relative' }}>
+      {/* Decorative background shapes */}
+      <div className="position-absolute top-0 start-0 w-100 h-100 overflow-hidden pointer-events-none" style={{ opacity: 0.03 }}>
+        <div className="position-absolute" style={{ top: '10%', left: '5%', width: '300px', height: '300px', background: '#3b286d', borderRadius: '50%', filter: 'blur(100px)' }}></div>
+        <div className="position-absolute" style={{ bottom: '10%', right: '5%', width: '400px', height: '400px', background: '#ff6b35', borderRadius: '50%', filter: 'blur(150px)' }}></div>
       </div>
 
-      <style jsx global>{`
-        .font-sora { font-family: var(--font-sora), sans-serif; }
-        .font-manrope { font-family: var(--font-manrope), sans-serif; }
-      `}</style>
+      <div className="container-fluid px-lg-5">
+        <div className="row justify-content-center text-center mb-5 pb-3">
+          <div className="col-lg-10">
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="d-inline-block px-4 py-2 rounded-pill mb-3"
+              style={{ background: 'rgba(59, 40, 109, 0.05)', color: '#3b286d', fontSize: '14px', fontWeight: 800, letterSpacing: '2px', border: '1px solid rgba(59, 40, 109, 0.1)' }}
+            >
+              INDUSTRIAL SPECIALIZATION
+            </motion.span>
+            <h2 className="display-4 fw-black mb-4" style={{ color: '#132145', fontFamily: 'var(--font-sora)', letterSpacing: '-1px' }}>
+              Strategic Solutions for <span style={{ color: '#3b286d' }}>Business Solution</span>
+            </h2>
+            <p className="mx-auto" style={{ maxWidth: '700px', color: '#666', fontSize: '18px', lineHeight: 1.6, fontFamily: 'var(--font-manrope)' }}>
+              We engineering growth for high-impact sectors using data-led precision and creative authority.
+            </p>
+          </div>
+        </div>
+
+        {/* 4 Column Grid = 3 Rows for 12 items */}
+        <div className="row g-4 px-xl-4">
+          {digitalIndustries.map((industry, index) => (
+            <div key={industry.id} className="col-xl-3 col-lg-4 col-md-6">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                onClick={() => handleCardClick(industry)}
+                className="industry-premium-card h-100 rounded-5 overflow-hidden position-relative"
+                style={{
+                  cursor: 'pointer',
+                  background: '#fff',
+                  border: '1px solid #eee',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+                  transition: 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
+                }}
+              >
+                {/* Image Wrap */}
+                <div className="image-wrap position-relative overflow-hidden" style={{ aspectRatio: '1/1' }}>
+                  <img
+                    src={industry.image}
+                    alt={industry.name}
+                    className="w-100 h-100 object-fit-cover"
+                    style={{ transition: 'transform 1.5s ease' }}
+                  />
+                  <div className="overlay-gradient position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-4" style={{ background: 'linear-gradient(0deg, rgba(19,33,69,0.9) 0%, rgba(19,33,69,0) 60%)' }}>
+                    <div className="d-flex align-items-center justify-content-between text-white">
+                      <span className="small fw-bold opacity-75">GO TO STRATEGY</span>
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </div>
+                  </div>
+
+                  {/* Floating ID */}
+                  <div className="position-absolute top-0 end-0 m-3 bg-white rounded-3 px-2 py-1 shadow-sm border border-light">
+                    <span className="fw-black" style={{ color: '#3b286d', fontSize: '12px' }}>{(index + 1).toString().padStart(2, '0')}</span>
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="card-body p-4 p-xl-5">
+                  <h3 className="h5 fw-black mb-3" style={{ color: '#132145', fontFamily: 'var(--font-sora)', minHeight: '3rem' }}>
+                    {industry.name}
+                  </h3>
+                  <p className="small text-muted mb-4 line-clamp-2" style={{ fontFamily: 'var(--font-manrope)', lineHeight: 1.5 }}>
+                    {industry.description}
+                  </p>
+
+                  <div className="d-flex align-items-center gap-2">
+                    <div className="progress flex-grow-1" style={{ height: '4px', background: '#f0f0f0' }}>
+                      <div className="progress-bar" style={{ width: '40%', background: '#3b286d' }}></div>
+                    </div>
+                    <span className="fw-bold" style={{ fontSize: '10px', color: '#3b286d' }}>ROI FOCUSED</span>
+                  </div>
+                </div>
+
+                <style jsx>{`
+                  .industry-premium-card:hover {
+                    transform: translateY(-15px) scale(1.02);
+                    box-shadow: 0 40px 70px rgba(59, 40, 109, 0.15) !important;
+                    border-color: #3b286d30 !important;
+                  }
+                  .industry-premium-card:hover img {
+                    transform: scale(1.15);
+                  }
+                  .line-clamp-2 {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                  }
+                  .fw-black { font-weight: 900; }
+                `}</style>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

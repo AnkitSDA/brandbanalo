@@ -267,7 +267,7 @@
     {
       "id": 14,
       "slug": "avecia-healthcare-website",
-      "img": "AveciaWebsite.webp",
+      "img": "AveciaWebSite.webp",
       "imageName": "Avecia Healthcare - Website",
       "date": "MARCH 26, 2025",
       "title": "Avecia Healthcare - Website Development",
@@ -276,7 +276,7 @@
       "href": "/case-study/details/avecia-healthcare-website",
       "category": "Web Development",
       "images": [
-        "AveciaHealthcareWebsite.webp",
+        "AveciaHealthcareWebSite.webp",
         "AveciaHealthcareSEO.webp",
         "AveciaHealthcareBrandDesign.webp",
         "AveciaHealthcareLeadGene.webp",
@@ -714,7 +714,7 @@
     {
       "id": 39,
       "slug": "shiv-shakti-bath-social-media",
-      "img": "ShivShaktiBathSocialmedia.webp",
+      "img": "ShivShaktiBathSocialMedia.webp",
       "imageName": "Shiv Shakti Bath - Social Media",
       "date": "MARCH 26, 2025",
       "title": "Shiv Shakti Bath - Social Media Marketing",
@@ -723,7 +723,7 @@
       "href": "/case-study/details/shiv-shakti-bath-social-media",
       "category": "Social Media",
       "images": [
-        "ShivShaktiBathSocialmedia.webp",
+        "ShivShaktiBathSocialMedia.webp",
         "ShivShaktiBathBrandDesign.webp",
         "ShivShaktiBathSEO.webp",
         "ShivShaktiBathWebSite.webp"
@@ -894,7 +894,7 @@
     {
       "id": 49,
       "slug": "chemo-biological-branding",
-      "img": "ChemoBranddesign.webp",
+      "img": "ChemoBrandDesign.webp",
       "imageName": "Chemo Biological - Brand Design",
       "date": "MARCH 26, 2025",
       "title": "Chemo Biological - Brand Design",
@@ -903,7 +903,7 @@
       "href": "/case-study/details/chemo-biological-branding",
       "category": "Branding",
       "images": [
-        "ChemoBranddesign.webp",
+        "ChemoBrandDesign.webp",
         "ChemoLeadGene.webp",
         "ChemoSEO.webp",
         "ChemoSocialMedia.webp",

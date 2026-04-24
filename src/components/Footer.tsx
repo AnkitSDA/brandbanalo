@@ -54,17 +54,20 @@ export default function Footer({ marquee }: { marquee?: React.ReactNode }) {
               Brand Banalo Pvt Ltd. is a full-service digital marketing agency based in Delhi, India. We help businesses grow, scale, and build a strong online presence. We are a team of passionate digital marketers who are dedicated to helping businesses succeed in the digital space.
             </p>
             <div className="footer-socials">
-              <a href="#" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Brandbanalo/61562210047804/?rdid=msjDXVSboNXfXzhi&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AKKpkvwa4%2F" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fab fa-facebook-f" />
               </a>
-              <a href="#" aria-label="Twitter">
-                <i className="fab fa-twitter" />
-              </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/brandbanalo?igsh=eDRuN2gxNWQyYzZs" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i className="fab fa-instagram" />
               </a>
-              <a href="#" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/brandbanalo/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <i className="fab fa-linkedin-in" />
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=918395825607" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i className="fab fa-whatsapp" />
+              </a>
+              <a href="https://www.youtube.com/channel/UCVmLm0F7mTzO-MDUvrEMmMg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <i className="fab fa-youtube" />
               </a>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import DigitalIndustryMain from "@/components/Digital-Industry/DigitalIndustryMain";
+import ServiceBreadcrumbSection from "@/components/sections/service/ServiceBreadcrumbSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function IndustrySpecificServicePage() {
   return (
     <main>
+      <ServiceBreadcrumbSection title="INDUSTRY SPECIFIC SERVICES" />
       <DigitalIndustryMain />
     </main>
   );

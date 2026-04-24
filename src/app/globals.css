@@ -385,9 +385,10 @@ body {
 }
 
 #smooth-wrapper,
-#smooth-content {
-  overflow-x: visible !important;
-  overflow-y: visible !important;
+#smooth-content,
+.page-shell {
+  overflow: visible !important;
+  height: auto !important;
 }
 
 /* Preloader Font Overrides */
@@ -422,4 +423,19 @@ body {
     align-items: center;
     justify-content: center;
   }
+}
+@media (max-width: 575px) {
+    .mission-wrapper .mission-image-items .mission-image {
+        height: auto !important;
+        min-height: 250px;
+        aspect-ratio: 1 / 1.1;
+        padding: 10px !important;
+        background: transparent !important;
+    }
+    .full-img3 {
+        height: 100% !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
 }

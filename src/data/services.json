@@ -138,7 +138,7 @@
       "id": "ind-001",
       "name": "PCD Pharma Industries",
       "description": "We help pharma companies build trust and generate high-intent enquiries through compliant, informative websites and targeted digital campaigns.",
-      "image": "/assets/img/industries-specific-main/PCD Pharma Industries.webp",
+      "image": "/assets/img/industries-specific-main/pcdpharmaindustries.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -151,7 +151,7 @@
       "id": "ind-002",
       "name": "Car Parts Importer & Suppliers",
       "description": "For automotive importers and suppliers, we focus on product visibility, dealer enquiries, and local search optimisation to drive more orders.",
-      "image": "/assets/img/industries-specific-main/Car Parts Importer & Suppliers.webp",
+      "image": "/assets/img/industries-specific-main/carpartsimporter&suppliers.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -164,7 +164,7 @@
       "id": "ind-003",
       "name": "Road Safety Product Manufacturer",
       "description": "We position safety product brands as reliable partners for government and infrastructure companies with clear messaging and targeted campaigns.",
-      "image": "/assets/img/industries-specific-main/Road Safety Product Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/roadsafetyproductmanufacturer.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -177,7 +177,7 @@
       "id": "ind-004",
       "name": "Electronics Devices Supplier",
       "description": "We help electronics suppliers showcase product lines, highlight specifications, and capture B2B enquiries through conversion-focused experiences.",
-      "image": "/assets/img/industries-specific-main/Electronics Devices Supplier.webp",
+      "image": "/assets/img/industries-specific-main/electronicsdevicessupplier.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -191,7 +191,7 @@
       "id": "ind-005",
       "name": "Industrial Automation Solutions",
       "description": "For industrial automation brands, we simplify complex offerings into clear value propositions that resonate with decision makers and engineers.",
-      "image": "/assets/img/industries-specific-main/Industrial Automation Solutions.webp",
+      "image": "/assets/img/industries-specific-main/industrialautomationsolutions.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -205,7 +205,7 @@
       "id": "ind-006",
       "name": "Healthcare - Setup",
       "description": "We support hospitals, clinics, and healthcare setups with patient-centric websites, appointment funnels, and local visibility strategies.",
-      "image": "/assets/img/industries-specific-main/Healthcare - Setup.webp",
+      "image": "/assets/img/industries-specific-main/healthcare-setup.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -219,7 +219,7 @@
       "key": "smc-grp-tanks",
       "name": "SMC & GRP Tanks Manufacturer",
       "description": "We support SMC & GRP Tanks Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/SMC & GRP Tanks Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/smc&grptanksmanufacturer.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -232,7 +232,7 @@
       "key": "offline-brand-ads",
       "name": "Offline Brand Advertisement",
       "description": "We support Offline Brand Advertisement with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Offline Brand Advertisement.webp",
+      "image": "/assets/img/industries-specific-main/offlinebrandadvertisement.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -245,7 +245,7 @@
       "key": "bag-manufacturer",
       "name": "Bag Manufacturer",
       "description": "We support Bag Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Bag Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/bagmanufacturer.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -258,7 +258,7 @@
       "key": "machinery-manufacturer",
       "name": "Machinery Manufacturer",
       "description": "We support Machinery Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Machinery Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/machinerymanufacturer.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -271,7 +271,7 @@
       "key": "ball-bearing",
       "name": "Ball Bearing Importer & Supplier",
       "description": "We support Ball Bearing Importer & Supplier with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Ball Bearing Importer & Supplier.webp",
+      "image": "/assets/img/industries-specific-main/ballbearingimporter&supplier.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -284,7 +284,7 @@
       "key": "pool-table",
       "name": "Pool Table Manufacturer",
       "description": "We support Pool Table Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Pool Table Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/pooltablemanufacturer.webp",
       "recommendedServiceIds": [
         "001",
         "002",
@@ -297,7 +297,7 @@
       "key": "fire-safety-doors",
       "name": "Fire Safety Doors Manufacturer",
       "description": "We support Fire Safety Doors Manufacturer with bespoke digital marketing, websites, and lead generation funnels designed to increase direct enquiries and B2B sales.",
-      "image": "/assets/img/industries-specific-main/Fire Safety Doors Manufacturer.webp",
+      "image": "/assets/img/industries-specific-main/firesafetydoorsmanufacturer.webp",
       "recommendedServiceIds": [
         "001",
         "002",

@@ -10,6 +10,15 @@ export default function Offcanvas() {
     setIsServicesOpen(!isServicesOpen);
   };
 
+  const closeOffcanvas = () => {
+    // Select the offcanvas elements and remove the open classes
+    const info = document.querySelector(".offcanvas__info");
+    const overlay = document.querySelector(".offcanvas__overlay");
+    
+    if (info) info.classList.remove("info-open");
+    if (overlay) overlay.classList.remove("overlay-open");
+  };
+
   return (
     <>
       <div className="fix-area">
@@ -39,14 +48,22 @@ export default function Offcanvas() {
                   </div>
                 </div>
                 <div className="offcanvas__close">
-                  <button className="close-btn">close</button>
+                  <button className="close-btn" onClick={closeOffcanvas}>close</button>
                 </div>
               </div>
               <div className="mobile-menus mt-4">
                 <nav className="offcanvas-menu">
                   <ul className="list-unstyled" style={{ paddingLeft: '50px' }}>
-                    <li className="mb-3"><Link href="/" className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>Home</Link></li>
-                    <li className="mb-3"><Link href="/behind-the-brand" className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>Behind the brand</Link></li>
+                    <li className="mb-3">
+                      <Link href="/" onClick={closeOffcanvas} className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
+                        Home
+                      </Link>
+                    </li>
+                    <li className="mb-3">
+                      <Link href="/behind-the-brand" onClick={closeOffcanvas} className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
+                        Behind the brand
+                      </Link>
+                    </li>
                     <li className="mb-3">
                       <a href="#" onClick={toggleServices} className="text-decoration-none fw-bold text-uppercase d-flex justify-content-between align-items-center" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
                         Services
@@ -54,46 +71,80 @@ export default function Offcanvas() {
                       </a>
                       {isServicesOpen && (
                         <ul className="list-unstyled mt-3" style={{ paddingLeft: '15px', borderLeft: '2px solid rgba(59, 40, 109, 0.1)' }}>
-                          <li className="mb-2"><Link href="/services/web-development" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Website Development</Link></li>
-                          <li className="mb-2"><Link href="/services/seo" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Search Engine Optimization</Link></li>
-                          <li className="mb-2"><Link href="/services/google-ads" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Google Ads</Link></li>
-                          <li className="mb-2"><Link href="/services/meta-ads" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Meta Ads</Link></li>
-                          <li className="mb-2"><Link href="/services/social-media-marketing" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Social Media Marketing</Link></li>
-                          <li className="mb-2"><Link href="/services/branding-kit" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Branding Kit</Link></li>
-                          <li className="mb-2"><Link href="/services/website-design" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Website Design</Link></li>
-                          <li className="mb-2"><Link href="/services/ugc-marketing" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>UGC Marketing</Link></li>
-                          <li className="mb-2"><Link href="/services/influancer-marketing" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Influencer Marketing</Link></li>
-                          <li className="mb-2"><Link href="/services/video-creation" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Video Creation</Link></li>
-                          <li className="mb-2"><Link href="/services/product-photography" className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Product Photography</Link></li>
+                          <li className="mb-2"><Link href="/services/web-development" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Website Development</Link></li>
+                          <li className="mb-2"><Link href="/services/seo" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Search Engine Optimization</Link></li>
+                          <li className="mb-2"><Link href="/services/google-ads" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Google Ads</Link></li>
+                          <li className="mb-2"><Link href="/services/meta-ads" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Meta Ads</Link></li>
+                          <li className="mb-2"><Link href="/services/social-media-marketing" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Social Media Marketing</Link></li>
+                          <li className="mb-2"><Link href="/services/branding-kit" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Branding Kit</Link></li>
+                          <li className="mb-2"><Link href="/services/website-design" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Website Design</Link></li>
+                          <li className="mb-2"><Link href="/services/ugc-marketing" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>UGC Marketing</Link></li>
+                          <li className="mb-2"><Link href="/services/influancer-marketing" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Influencer Marketing</Link></li>
+                          <li className="mb-2"><Link href="/services/video-creation" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Video Creation</Link></li>
+                          <li className="mb-2"><Link href="/services/product-photography" onClick={closeOffcanvas} className="text-decoration-none fw-medium" style={{ fontSize: '15px', color: '#555' }}>Product Photography</Link></li>
                         </ul>
                       )}
                     </li>
-                    <li className="mb-3 mt-3"><Link href="/industrial-specific/web-development/hospitality" className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>Industrial Specific</Link></li>
-                    <li className="mb-3"><Link href="/case-study" className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>Case Study</Link></li>
-                    <li className="mb-3"><Link href="/pricing" className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>Pricing</Link></li>
-                    <li className="mb-3"><Link href="/team" className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>Team</Link></li>
-                    <li className="mb-3"><Link href="/blog/grid" className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>Blog</Link></li>
+                    <li className="mb-3 mt-3">
+                      <Link href="/industrial-specific/web-development/hospitality" onClick={closeOffcanvas} className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
+                        Industrial Specific
+                      </Link>
+                    </li>
+                    <li className="mb-3">
+                      <Link href="/case-study" onClick={closeOffcanvas} className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
+                        Case Study
+                      </Link>
+                    </li>
+                    <li className="mb-3">
+                      <Link href="/pricing" onClick={closeOffcanvas} className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
+                        Pricing
+                      </Link>
+                    </li>
+                    <li className="mb-3">
+                      <Link href="/team" onClick={closeOffcanvas} className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
+                        Team
+                      </Link>
+                    </li>
+                    <li className="mb-3">
+                      <Link href="/blog/grid" onClick={closeOffcanvas} className="text-decoration-none fw-bold text-uppercase" style={{ fontSize: '18px', color: '#3b286d', letterSpacing: '1px' }}>
+                        Blog
+                      </Link>
+                    </li>
                   </ul>
                 </nav>
               </div>
-              <ul className="social-text pt-4 border-top">
+              <ul className="social-icon pt-4 border-top d-flex align-items-center gap-3" style={{ paddingLeft: '50px', listStyle: 'none' }}>
                 <li>
-                  <a href="#" className="fw-bold text-uppercase" style={{ color: '#3b286d' }}>Instagram</a>
+                  <a href="https://www.facebook.com/people/Brandbanalo/61562210047804/?rdid=msjDXVSboNXfXzhi&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AKKpkvwa4%2F" target="_blank" rel="noopener noreferrer" style={{ color: '#3b286d', fontSize: '22px' }}>
+                    <i className="fab fa-facebook-f" />
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="fw-bold text-uppercase" style={{ color: '#3b286d' }}>Dribbble</a>
+                  <a href="https://www.instagram.com/brandbanalo?igsh=eDRuN2gxNWQyYzZs" target="_blank" rel="noopener noreferrer" style={{ color: '#3b286d', fontSize: '22px' }}>
+                    <i className="fab fa-instagram" />
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="fw-bold text-uppercase" style={{ color: '#3b286d' }}>Twitter</a>
+                  <a href="https://www.linkedin.com/company/brandbanalo/posts/?feedView=all" target="_blank" rel="noopener noreferrer" style={{ color: '#3b286d', fontSize: '22px' }}>
+                    <i className="fab fa-linkedin-in" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://api.whatsapp.com/send?phone=918395825607" target="_blank" rel="noopener noreferrer" style={{ color: '#3b286d', fontSize: '22px' }}>
+                    <i className="fab fa-whatsapp" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/channel/UCVmLm0F7mTzO-MDUvrEMmMg" target="_blank" rel="noopener noreferrer" style={{ color: '#3b286d', fontSize: '22px' }}>
+                    <i className="fab fa-youtube" />
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div className="offcanvas__overlay" />
+      <div className="offcanvas__overlay" onClick={closeOffcanvas} />
     </>
   );
 }
-
-

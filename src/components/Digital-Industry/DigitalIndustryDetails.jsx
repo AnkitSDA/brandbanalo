@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 
 const DigitalIndustryDetails = ({ industry, onBack }) => {
@@ -8,180 +7,186 @@ const DigitalIndustryDetails = ({ industry, onBack }) => {
 
   return (
     <article className="digital-industry-details bg-white min-h-screen relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-screen bg-[#f6f7fb] -z-10 translate-x-1/4 skew-x-12" />
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#3b82f6]/5 blur-[100px] rounded-full -z-10" />
-
-      {/* Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      {/* Dynamic Background */}
+      <div className="position-absolute top-0 start-0 w-100 h-100 pointer-events-none" style={{ background: 'radial-gradient(circle at top right, rgba(59,40,109,0.03) 0%, transparent 50%), radial-gradient(circle at bottom left, rgba(255,107,53,0.02) 0%, transparent 40%)' }} />
+      
+      {/* Header / Nav */}
+      <nav className="container pt-5 position-relative z-1">
         <motion.button
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={onBack}
-          className="group flex items-center gap-3 px-5 py-2.5 rounded-full bg-white shadow-sm border border-[#e2e8f0] text-[#5b6472] hover:text-[#0a1020] hover:shadow-md transition-all duration-300 font-manrope font-medium text-sm"
+          className="btn d-flex align-items-center gap-2 px-3 py-2 rounded-3 border bg-white shadow-sm hover-move-left"
+          style={{ color: '#3b286d', fontWeight: 800, fontSize: '13px', letterSpacing: '0.5px' }}
         >
-          <svg className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Industries
+          <i className="fa-solid fa-chevron-left small"></i>
+          ALL INDUSTRIES
         </motion.button>
-      </div>
+      </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Hero Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3b82f6]/10 text-[#3b82f6] text-xs font-bold font-sora tracking-widest uppercase mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
-              Industry Specialized Strategy
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0a1020] mb-8 font-sora tracking-tight leading-[1.05]">
-              Digital Marketing Agency for <span className="text-[#3b82f6] underline decoration-[#3b82f6]/20 underline-offset-8 decoration-4">{industry.name}</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-[#5b6472] mb-10 leading-relaxed font-manrope font-light max-w-xl border-l-3 border-[#3b82f6] pl-6 py-2">
-              {industry.description}
-            </p>
-            
-            <div className="flex flex-wrap gap-3 mb-10">
-              {industry.keywords.slice(0, 4).map((kw, idx) => (
-                <span key={idx} className="px-4 py-1.5 rounded-full bg-[#f1f5f9] border border-[#e2e8f0] text-[#64748b] text-[13px] font-manrope">
-                  {kw}
-                </span>
-              ))}
-            </div>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0a1020] text-white rounded-full font-bold font-manrope shadow-[0_20px_40px_-10px_rgba(10,16,32,0.3)] hover:shadow-[0_10px_20px_-5px_rgba(10,16,32,0.4)] hover:bg-[#3b82f6] hover:-translate-y-1 transition-all duration-300"
+      <div className="container py-5 py-lg-7 position-relative z-1">
+        {/* Hero Row */}
+        <div className="row align-items-center g-5 mb-7">
+          <div className="col-lg-7">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Get Custom Strategy
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </motion.div>
-
-          {/* Hero Image / Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-y-3">
-              <img
-                src={industry.image}
-                alt={industry.name}
-                className="w-full h-full object-cover -skew-y-3 scale-110"
-              />
-            </div>
-            {/* Floating Card */}
-            <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-[#e2e8f0] max-w-xs hidden sm:block">
-              <div className="w-12 h-12 bg-[#3b82f6] rounded-2xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+              <div className="d-flex align-items-center gap-3 mb-4">
+                 <div style={{ width: '40px', height: '2px', background: '#3b286d' }}></div>
+                 <span className="fw-black text-uppercase tracking-widest" style={{ color: '#3b286d', fontSize: '12px' }}>Strategic Sector Analysis</span>
               </div>
-              <h4 className="font-bold text-[#0a1020] mb-2 font-sora">Measured Growth</h4>
-              <p className="text-sm text-[#5b6472] font-manrope leading-relaxed">
-                Data-driven outcomes tailored to the {industry.name} landscape.
+              
+              <h1 className="display-3 fw-black mb-4" style={{ color: '#132145', fontFamily: 'var(--font-sora)', lineHeight: 1 }}>
+                Pioneering <span className="text-gradient">Growth</span> for <br/>
+                <span style={{ color: '#3b286d' }}>{industry.name}</span>
+              </h1>
+              
+              <p className="lead text-muted mb-5 ps-4 border-start border-3" style={{ borderLeftColor: '#3b286d30 !important', fontFamily: 'var(--font-manrope)', fontWeight: 500 }}>
+                {industry.description}
               </p>
-            </div>
-          </motion.div>
+
+              <div className="d-flex flex-wrap gap-4 align-items-center">
+                 <a
+                    href="/contact"
+                    className="btn btn-dark rounded-pill px-5 py-3 fw-black tracking-wider shadow-lg"
+                    style={{ background: '#132145', fontSize: '14px' }}
+                  >
+                    GENERATE CUSTOM STRATEGY
+                  </a>
+                  <div className="d-flex -space-x-3">
+                     {[1,2,3].map(i => (
+                        <div key={i} className="rounded-circle border border-2 border-white shadow-sm" style={{ width: '40px', height: '40px', background: '#eee', marginLeft: i > 1 ? '-10px' : '0' }}>
+                           <img src={`/assets/img/team/${i}.webp`} className="w-100 h-100 object-fit-cover rounded-circle" alt="Expert" onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Expert&background=3b286d&color=fff'; }} />
+                        </div>
+                     ))}
+                     <span className="ms-3 small fw-bold text-muted my-auto">Experts ready to scale</span>
+                  </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="col-lg-5">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="position-relative"
+            >
+              <div className="rounded-5 overflow-hidden shadow-2xl border border-8 border-white">
+                <img
+                  src={industry.image}
+                  alt={industry.name}
+                  className="img-fluid w-100 h-100 object-fit-cover"
+                />
+              </div>
+              {/* Floating Stat Card */}
+              <div className="position-absolute top-100 start-0 translate-middle-y bg-white p-4 rounded-4 shadow-xl border border-light d-none d-md-block" style={{ width: '220px', marginLeft: '-30px' }}>
+                 <div className="text-primary fw-black h2 mb-1" style={{ color: '#3b286d' }}>98%</div>
+                 <div className="small fw-bold text-muted">Client Retention in {industry.name} Sector</div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Strategy Section */}
-        <section className="mt-32 lg:mt-48">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1020] mb-6 font-sora">The ROI Framework</h2>
-            <p className="text-[#5b6472] font-manrope">Our specialized approach for {industry.name} ensures every digital touchpoint contributes directly to your bottom line.</p>
-          </div>
+        {/* The 3-Row Card Structure requested by user */}
+        <div className="row mt-5 pt-5 g-4">
+           <div className="col-12 text-center mb-5">
+              <h2 className="display-5 fw-black" style={{ color: '#132145' }}>Implementation Roadmap</h2>
+              <p className="text-muted">A data-led execution framework built for market dominance.</p>
+           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-10 rounded-3xl bg-[#f6f7fb] border border-transparent hover:border-[#3b82f6]/20 transition-all duration-300 group">
-              <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#3b82f6] transition-colors duration-300">
-                <svg className="w-7 h-7 text-[#3b82f6] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
+           {/* Row 1: Core Content as Cards */}
+           <div className="col-12">
+              <div className="row g-4">
+                 <div className="col-lg-4">
+                    <div className="roadmap-card h-100 p-5 rounded-5 border-0 shadow-sm" style={{ background: 'linear-gradient(135deg, #3b286d 0%, #132145 100%)', color: '#fff' }}>
+                       <span className="h1 fw-black opacity-20 d-block mb-3">01</span>
+                       <h3 className="h4 fw-bold mb-3">Foundational Authority</h3>
+                       <p className="small opacity-75">Establishing your brand as the primary source of truth in the {industry.name} space through technical SEO and content architecture.</p>
+                    </div>
+                 </div>
+                 <div className="col-lg-8">
+                    <div className="roadmap-card h-100 p-5 rounded-5 bg-light border-0 shadow-sm">
+                       <h3 className="h4 fw-bold mb-4" style={{ color: '#132145' }}>Strategic Insight</h3>
+                       <div className="row g-3">
+                          {industry.keywords.slice(0, 4).map((kw, i) => (
+                             <div key={i} className="col-md-6">
+                                <div className="d-flex align-items-center gap-3 p-3 bg-white rounded-4 shadow-xs border border-light">
+                                   <i className="fa-solid fa-magnifying-glass small text-primary" style={{ color: '#3b286d' }}></i>
+                                   <span className="small fw-bold">{kw}</span>
+                                </div>
+                             </div>
+                          ))}
+                       </div>
+                    </div>
+                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#0a1020] mb-4 font-sora">Market Analysis</h3>
-              <p className="text-[#5b6472] font-manrope text-[15px] leading-relaxed">
-                In-depth research into {industry.name} trends and competitor landscape to identify hidden opportunities.
-              </p>
-            </div>
+           </div>
 
-            <div className="p-10 rounded-3xl bg-[#f6f7fb] border border-transparent hover:border-[#3b82f6]/20 transition-all duration-300 group">
-              <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#3b82f6] transition-colors duration-300">
-                <svg className="w-7 h-7 text-[#3b82f6] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5" />
-                </svg>
+           {/* Row 2: Content Breakdown */}
+           <div className="col-12">
+              <div className="roadmap-card p-5 rounded-5 bg-white border border-light shadow-sm overflow-hidden position-relative">
+                 <div className="row align-items-center position-relative z-1">
+                    <div className="col-lg-7">
+                       <h3 className="h3 fw-black mb-4" style={{ color: '#132145' }}>Strategic Implementation</h3>
+                       <div className="prose text-muted mb-0" style={{ lineHeight: 1.8, fontSize: '15px' }}>
+                          {industry.content}
+                       </div>
+                    </div>
+                    <div className="col-lg-5 d-none d-lg-block">
+                       <div className="p-4 rounded-5 bg-primary bg-opacity-10 text-center border border-primary border-opacity-10">
+                          <i className="fa-solid fa-bolt-lightning display-4 mb-4" style={{ color: '#3b286d' }}></i>
+                          <h4 className="h5 fw-bold mb-2">Instant Scale</h4>
+                          <p className="small text-muted mb-0">Our rapid-deployment framework ensures your strategy goes live in weeks, not months.</p>
+                       </div>
+                    </div>
+                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#0a1020] mb-4 font-sora">Strategy Blueprint</h3>
-              <p className="text-[#5b6472] font-manrope text-[15px] leading-relaxed">
-                Custom {industry.keywords[0]} roadmap designed to capture high-intent buyers and distributors.
-              </p>
-            </div>
+           </div>
 
-            <div className="p-10 rounded-3xl bg-[#0a1020] text-white overflow-hidden relative group md:col-span-2 lg:col-span-1">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#3b82f6] blur-[80px] opacity-20 -mr-24 -mt-24" />
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 border border-white/20">
-                <svg className="w-7 h-7 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+           {/* Row 3: Final ROI Cards */}
+           <div className="col-12">
+              <div className="row g-4">
+                 {[
+                   { t: "Tactical Blueprint", d: "Precise execution roadmaps optimized for niche audiences.", i: "fa-chess" },
+                   { t: "Market Penetration", d: "Aggressive search and social strategies to win market share.", i: "fa-dart-single" },
+                   { t: "Conversion Mastery", d: "High-performance landing pages designed for bulk leads.", i: "fa-bullseye" }
+                 ].map((card, i) => (
+                    <div key={i} className="col-lg-4">
+                       <div className="roadmap-card h-100 p-4 p-xl-5 rounded-5 bg-white border border-light shadow-sm text-center transition-all hover-lift">
+                          <div className="mx-auto rounded-circle d-flex align-items-center justify-content-center mb-4" style={{ width: '60px', height: '60px', background: '#f8f7ff', color: '#3b286d' }}>
+                             <i className={`fa-solid ${card.i} fs-4`}></i>
+                          </div>
+                          <h4 className="h5 fw-bold mb-2" style={{ color: '#132145' }}>{card.t}</h4>
+                          <p className="small text-muted mb-0">{card.d}</p>
+                       </div>
+                    </div>
+                 ))}
               </div>
-              <h3 className="text-xl font-bold mb-4 font-sora">Performance Edge</h3>
-              <p className="text-white/70 font-manrope text-[15px] leading-relaxed">
-                Continuous optimization techniques that lower acquisition costs and increase lifetime customer value.
-              </p>
-            </div>
-          </div>
-        </section>
+           </div>
+        </div>
 
-        {/* Detailed Content */}
-        <section className="mt-32">
-          <div className="bg-[#f6f7fb] p-10 sm:p-16 rounded-[3rem] border border-[#e2e8f0]">
-             <h2 className="text-3xl font-bold text-[#0a1020] mb-10 font-sora">Strategic Implementation</h2>
-             <div className="prose prose-lg prose-slate max-w-none font-manrope text-[#5b6472] leading-relaxed">
-               {industry.content}
-             </div>
-             <div className="mt-12 pt-12 border-t border-[#e2e8f0] grid sm:grid-cols-2 gap-8">
-               <div>
-                  <h4 className="text-xs font-bold font-sora uppercase tracking-widest text-[#94a3b8] mb-3">SEO Title Profile</h4>
-                  <p className="text-[#0a1020] font-medium">{industry.metaTitle}</p>
-               </div>
-               <div>
-                  <h4 className="text-xs font-bold font-sora uppercase tracking-widest text-[#94a3b8] mb-3">Keyword Ecosystem</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {industry.keywords.map((k, i) => (
-                      <span key={i} className="text-[11px] px-2 py-0.5 bg-white border border-[#e2e8f0] rounded text-[#64748b]">#{k.replace(/\s+/g, '')}</span>
-                    ))}
-                  </div>
-               </div>
-             </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <footer className="mt-24 text-center">
-           <button
-            onClick={onBack}
-            className="text-[#5b6472] hover:text-[#3b82f6] font-semibold font-manrope flex items-center justify-center gap-2 mx-auto group"
-          >
-            <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Explore Other Industries
-          </button>
-        </footer>
+        {/* Footer Cta */}
+        <div className="text-center mt-7 pt-5">
+           <button onClick={onBack} className="btn btn-link text-decoration-none fw-black text-uppercase small text-muted hover-primary transition-all">
+              <i className="fa-solid fa-arrow-left me-3"></i>
+              EXPLORE OTHER SECTORS
+           </button>
+        </div>
       </div>
 
-      <style jsx global>{`
-        .font-sora { font-family: var(--font-sora), sans-serif; }
-        .font-manrope { font-family: var(--font-manrope), sans-serif; }
+      <style jsx>{`
+        .text-gradient { background: linear-gradient(90deg, #3b286d, #ff6b35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .fw-black { font-weight: 900; }
+        .hover-move-left:hover i { transform: translateX(-4px); }
+        .hover-lift:hover { transform: translateY(-10px); border-color: #3b286d30 !important; box-shadow: 0 20px 40px rgba(59,40,109,0.1) !important; }
+        .hover-primary:hover { color: #3b286d !important; transform: translateX(-5px); }
+        .shadow-2xl { box-shadow: 0 40px 100px -20px rgba(19,33,69,0.3); }
+        .shadow-xl { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); }
+        .mb-7 { margin-bottom: 5rem; }
+        .mt-7 { margin-top: 5rem; }
       `}</style>
     </article>
   );
