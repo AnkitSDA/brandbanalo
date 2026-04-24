@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useRef, useEffect } from "react";
 import "@/styles/css/ServiceStackSection.css";
 
@@ -52,50 +51,47 @@ function ServiceStackCard({
 }) {
   return (
     <div className={`service-stack__sticky card-index-${i}`}>
-      <Link href={service.link} className="service-stack__card-link" style={{ 
+      <Link href={service.link} className="service-stack__card-link" style={{
         display: 'block',
         width: '100%',
         textDecoration: 'none'
       }}>
-        <div className="service-card-container" style={{ 
-          width: '100%', 
-          position: 'relative', 
+        <div className="service-card-container" style={{
+          width: '100%',
+          position: 'relative',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           background: 'transparent'
         }}>
-          {/* Desktop Image - Fit to Image Size */}
-          <div className="d-none d-md-block" style={{ 
-            width: '100%', 
+          <div className="d-none d-md-block" style={{
+            width: '100%',
             maxWidth: '1200px',
             position: 'relative',
           }}>
             <img
               src={service.desktopImg}
               alt={service.name}
-              style={{ 
-                width: '100%', 
-                height: 'auto', 
-                display: 'block', 
-                borderRadius: '24px', 
-                boxShadow: '0 15px 50px rgba(0,0,0,0.12)' 
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                borderRadius: '24px',
+                boxShadow: '0 15px 50px rgba(0,0,0,0.12)'
               }}
             />
           </div>
-
-          {/* Mobile Image - Fit to Image Size */}
-          <div className="d-block d-md-none" style={{ 
-            width: '100%', 
+          <div className="d-block d-md-none" style={{
+            width: '100%',
             position: 'relative',
             background: 'transparent'
           }}>
             <img
               src={service.mobileImg}
               alt={service.name}
-              style={{ 
-                width: '100%', 
-                height: 'auto', 
+              style={{
+                width: '100%',
+                height: 'auto',
                 display: 'block',
                 borderRadius: '16px'
               }}
@@ -124,6 +120,9 @@ export default function ServiceStackExperience() {
 
       gsap.registerPlugin(ScrollTrigger);
 
+      // Kill existing ScrollTriggers to avoid conflicts
+      ScrollTrigger.getAll().forEach(st => st.kill());
+
       ctx = gsap.context(() => {
         const cards = gsap.utils.toArray<HTMLElement>(
           containerRef.current!.querySelectorAll(".service-stack__sticky")
@@ -131,27 +130,30 @@ export default function ServiceStackExperience() {
         const totalCards = cards.length;
         if (totalCards === 0) return;
 
+        const isMobile = window.innerWidth < 768;
+
+        // Set initial states
         gsap.set(cards[0], { autoAlpha: 1, y: 0, scale: 1, zIndex: 11 });
         cards.slice(1).forEach((card, idx) => {
           gsap.set(card, {
             autoAlpha: 0,
-            y: "110vh",
+            y: "100vh",
             scale: 1,
             zIndex: 12 + idx,
           });
         });
 
-        const isMobile = window.innerWidth < 768;
-
         const masterTL = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: `+=${totalCards * 150}%`,
+            end: () => `+=${window.innerHeight * totalCards * 1.2}`,
             pin: true,
-            scrub: 1.5,
+            pinSpacing: true,
+            scrub: 2,
             anticipatePin: 1,
             invalidateOnRefresh: true,
+            refreshPriority: 1,
           },
         });
 
@@ -159,36 +161,41 @@ export default function ServiceStackExperience() {
           if (i === 0) return;
 
           const prevCard = cards[i - 1];
-          const offset = i - 1;
+          const offset = (i - 1) * 1.5;
 
           masterTL.to(
             card,
-            { y: 0, autoAlpha: 1, ease: "none", duration: 1 },
+            { y: 0, autoAlpha: 1, ease: "power1.inOut", duration: 1 },
             offset
           );
 
           masterTL.to(
             prevCard,
-            { scale: isMobile ? 1 : 0.96, ease: "none", duration: 0.5 },
+            { scale: isMobile ? 1 : 0.95, ease: "power1.inOut", duration: 0.5 },
             offset
           );
 
           masterTL.to(
             prevCard,
-            { autoAlpha: 0, ease: "none", duration: 0.3 },
-            offset + 0.5
+            { autoAlpha: 0, ease: "power1.inOut", duration: 0.4 },
+            offset + 0.6
           );
         });
 
+        // Refresh after fonts and images load
         ScrollTrigger.refresh();
+
         setTimeout(() => {
-          if (isActive) ScrollTrigger.refresh();
-        }, 1000);
+          if (isActive) {
+            ScrollTrigger.refresh(true);
+          }
+        }, 1500);
 
       }, containerRef);
     };
 
-    const timeoutId = setTimeout(init, 500);
+    // Wait for DOM to be ready
+    const timeoutId = setTimeout(init, 300);
 
     return () => {
       isActive = false;
@@ -199,7 +206,11 @@ export default function ServiceStackExperience() {
 
   return (
     <section className="service-stack fix section-padding pt-0">
-      <div ref={containerRef} className="service-stack__scroll-root" style={{ height: '90vh', minHeight: '500px' }}>
+      <div
+        ref={containerRef}
+        className="service-stack__scroll-root"
+        style={{ height: '90vh', minHeight: '500px' }}
+      >
         {services.map((service, index) => (
           <ServiceStackCard
             key={service.id}
@@ -213,7 +224,11 @@ export default function ServiceStackExperience() {
         <div
           className="full-img3"
           data-speed="auto"
-          style={{ backgroundImage: 'url(/assets/img/about/about-meme.webp)', backgroundSize: 'cover', minHeight: '400px' }}
+          style={{
+            backgroundImage: 'url(/assets/img/about/about-meme.webp)',
+            backgroundSize: 'cover',
+            minHeight: '400px'
+          }}
         />
       </div>
       <style jsx>{`
