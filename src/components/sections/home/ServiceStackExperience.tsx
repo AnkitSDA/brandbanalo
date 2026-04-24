@@ -147,9 +147,9 @@ export default function ServiceStackExperience() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: `+=${totalCards * 100}%`,
+            end: `+=${totalCards * 150}%`,
             pin: true,
-            scrub: 0.8,
+            scrub: 1.5,
             anticipatePin: 1,
             invalidateOnRefresh: true,
           },
