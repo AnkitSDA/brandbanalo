@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useEffect } from "react";
-import "@/styles/css/ServiceStackSection.css";
+import { useRef, useEffect, useState } from "react";
 
 const services = [
   {
@@ -42,202 +41,126 @@ const services = [
   }
 ];
 
-function ServiceStackCard({
-  service,
-  index: i,
-}: {
-  service: typeof services[0];
-  index: number;
-}) {
-  return (
-    <div className={`service-stack__sticky card-index-${i}`}>
-      <Link href={service.link} className="service-stack__card-link" style={{
-        display: 'block',
-        width: '100%',
-        textDecoration: 'none'
-      }}>
-        <div className="service-card-container" style={{
-          width: '100%',
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: 'transparent'
-        }}>
-          <div className="d-none d-md-block" style={{
-            width: '100%',
-            maxWidth: '1200px',
-            position: 'relative',
-          }}>
-            <img
-              src={service.desktopImg}
-              alt={service.name}
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                borderRadius: '24px',
-                boxShadow: '0 15px 50px rgba(0,0,0,0.12)'
-              }}
-            />
-          </div>
-          <div className="d-block d-md-none" style={{
-            width: '100%',
-            position: 'relative',
-            background: 'transparent'
-          }}>
-            <img
-              src={service.mobileImg}
-              alt={service.name}
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                borderRadius: '16px'
-              }}
-            />
-          </div>
-        </div>
-      </Link>
-    </div>
-  );
-}
-
 export default function ServiceStackExperience() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isScrolling = useRef(false);
 
   useEffect(() => {
-    let ctx: any;
-    let isActive = true;
+    const section = sectionRef.current;
+    if (!section) return;
 
-    const init = async () => {
-      if (!isActive || !containerRef.current) return;
+    const handleScroll = () => {
+      if (!section) return;
 
-      const { gsap } = await import("gsap");
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const windowHeight = window.innerHeight;
 
-      if (!isActive || !containerRef.current) return;
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Kill existing ScrollTriggers to avoid conflicts
-      ScrollTrigger.getAll().forEach(st => st.kill());
-
-      ctx = gsap.context(() => {
-        const cards = gsap.utils.toArray<HTMLElement>(
-          containerRef.current!.querySelectorAll(".service-stack__sticky")
+      // Section pinned zone
+      if (sectionTop <= 0 && sectionTop >= -(sectionHeight - windowHeight)) {
+        const scrolled = Math.abs(sectionTop);
+        const totalScroll = sectionHeight - windowHeight;
+        const progress = scrolled / totalScroll;
+        const newIndex = Math.min(
+          Math.floor(progress * services.length),
+          services.length - 1
         );
-        const totalCards = cards.length;
-        if (totalCards === 0) return;
-
-        const isMobile = window.innerWidth < 768;
-
-        // Set initial states
-        gsap.set(cards[0], { autoAlpha: 1, y: 0, scale: 1, zIndex: 11 });
-        cards.slice(1).forEach((card, idx) => {
-          gsap.set(card, {
-            autoAlpha: 0,
-            y: "100vh",
-            scale: 1,
-            zIndex: 12 + idx,
-          });
-        });
-
-        const masterTL = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: () => `+=${window.innerHeight * totalCards * 1.2}`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 2,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            refreshPriority: 1,
-          },
-        });
-
-        cards.forEach((card, i) => {
-          if (i === 0) return;
-
-          const prevCard = cards[i - 1];
-          const offset = (i - 1) * 1.5;
-
-          masterTL.to(
-            card,
-            { y: 0, autoAlpha: 1, ease: "power1.inOut", duration: 1 },
-            offset
-          );
-
-          masterTL.to(
-            prevCard,
-            { scale: isMobile ? 1 : 0.95, ease: "power1.inOut", duration: 0.5 },
-            offset
-          );
-
-          masterTL.to(
-            prevCard,
-            { autoAlpha: 0, ease: "power1.inOut", duration: 0.4 },
-            offset + 0.6
-          );
-        });
-
-        // Refresh after fonts and images load
-        ScrollTrigger.refresh();
-
-        setTimeout(() => {
-          if (isActive) {
-            ScrollTrigger.refresh(true);
-          }
-        }, 1500);
-
-      }, containerRef);
+        setActiveIndex(newIndex);
+      }
     };
 
-    // Wait for DOM to be ready
-    const timeoutId = setTimeout(init, 300);
-
-    return () => {
-      isActive = false;
-      clearTimeout(timeoutId);
-      if (ctx) ctx.revert();
-    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section className="service-stack fix section-padding pt-0">
-      <div
-        ref={containerRef}
-        className="service-stack__scroll-root"
-        style={{ height: '90vh', minHeight: '500px' }}
+    <>
+      <style>{`
+        .service-stack-section {
+          position: relative;
+        }
+        .service-stack-sticky {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .service-card {
+          position: absolute;
+          width: 100%;
+          padding: 20px;
+          transition: opacity 0.5s ease, transform 0.5s ease;
+          opacity: 0;
+          transform: translateY(60px);
+          pointer-events: none;
+        }
+        .service-card.active {
+          opacity: 1;
+          transform: translateY(0px);
+          pointer-events: all;
+        }
+        .service-card img {
+          width: 100%;
+          max-width: 1200px;
+          height: auto;
+          display: block;
+          border-radius: 24px;
+          box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+          margin: 0 auto;
+        }
+        @media (max-width: 767px) {
+          .service-card img {
+            border-radius: 16px;
+          }
+        }
+      `}</style>
+
+      <section
+        className="service-stack-section"
+        ref={sectionRef}
+        style={{ height: `${services.length * 100}vh` }}
       >
-        {services.map((service, index) => (
-          <ServiceStackCard
-            key={service.id}
-            service={service}
-            index={index}
-          />
-        ))}
-      </div>
+        <div className="service-stack-sticky">
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className={`service-card ${activeIndex === index ? "active" : ""}`}
+            >
+              <Link href={service.link} style={{ display: "block", textDecoration: "none" }}>
+                {/* Desktop */}
+                <img
+                  src={service.desktopImg}
+                  alt={service.name}
+                  className="d-none d-md-block"
+                />
+                {/* Mobile */}
+                <img
+                  src={service.mobileImg}
+                  alt={service.name}
+                  className="d-block d-md-none"
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <div className="p-relative about-video full-img-wrap3 mt-5">
         <div
           className="full-img3"
           data-speed="auto"
           style={{
-            backgroundImage: 'url(/assets/img/about/about-meme.webp)',
-            backgroundSize: 'cover',
-            minHeight: '400px'
+            backgroundImage: "url(/assets/img/about/about-meme.webp)",
+            backgroundSize: "cover",
+            minHeight: "400px",
           }}
         />
       </div>
-      <style jsx>{`
-        @media (max-width: 767px) {
-          .service-stack__scroll-root {
-            height: 75vh !important;
-          }
-        }
-      `}</style>
-    </section>
+    </>
   );
 }
